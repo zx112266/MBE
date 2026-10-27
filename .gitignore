@@ -452,3 +452,10 @@ tools/ImageCropper/**/*.png
 
 config
 debug
+# ---- 本地工具/临时文件 ----
+.tmp/
+.agents/
+.claude/
+.codex/
+.archify/
+.mcp.json

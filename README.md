@@ -1,43 +1,107 @@
-<!-- markdownlint-disable MD033 MD041 -->
-<p align="center">
-  <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/v1/icons/maa-logo_512x512.png" width="256" height="256" />
-</p>
+# 深空之眼 · 每日日常自动化脚本
 
-<div align="center">
+> 一个基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 的《深空之眼》每日重复任务自动化项目。
+> **仅用于学习 MaaFramework 的 Pipeline 编写与图像识别用法，请勿用于商业用途，也不要用于破坏游戏公平性。**
 
-# MaaPracticeBoilerplate
+---
 
-</div>
+## 这是什么
 
-本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，开发者可基于此模板直接创建自己的 MaaXXX 项目。
+把《深空之眼》里那些每天都要点一遍的流程（领体力、领任务奖励、商店采购、公会日常……）写成了 10 个可以自动跑的 Pipeline 脚本，跑完每个脚本都会自动回到游戏大厅，方便串起来一键执行。
 
-> **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
-> 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
+全部脚本是在 **DeepSeek 大模型**的辅助下、通过「截图 → 识别 → 点击 → 再截图验证」的方式一步步试出来的：没有读取游戏内存、没有修改客户端、没有模拟协议，只做了一件事——**看屏幕、点屏幕**，和人手动操作完全一样。
 
-## 即刻开始
+## 脚本清单与执行顺序
 
-**请不要直接克隆本仓库！你应该通过模板创建自己的项目！**  
+| # | 任务 | 文件 | 说明 |
+|---|---|---|---|
+| 1 | 启动游戏 | `start_game.json` | 冷启动游戏 → 点过标题页 → 清理登录奖励/签到弹窗 → 停在大厅 |
+| 2 | 领取体力 | `stamina.json` | 点顶部吨吨值 → 切「每日补给」→ 领上午 + 下午两档 → 关闭面板 |
+| 3 | 弥弥观测站 | `mimir.json` | 系统菜单 → 弥弥观测站 → 一键领取（连点 5 张结算）→ 一键派遣 |
+| 4 | 商店每日采购 | `shop.json` | 补给区免费领取 + 交易区每日采购 |
+| 5 | 公会日常 | `guild.json` | 矩阵补给领取 → 公会周目标逐行领取 |
+| 6 | 游园街日常 | `park.json` | 领取收益 → 一键投喂 → 委托派遣 → 游园任务一键领取 |
+| 7 | 介质攫取 | `medium.json` | 刻印 → 介质攫取 → 扫荡 |
+| 8 | 物资挑战 | `supply.json` | 模拟作战 → 表征-6 → 掉落倍数拉满 → 扫荡 → 返回 |
+| 9 | 任务领取 | `tasks.json` | 每日任务一键领取（含评分里程碑）→ 周常任务一键领取 |
+| 10 | 对策协议领取 | `contract.json` | 对策协议任务领取经验 → 回主页面领等级奖励 |
 
-请阅读 [如何开发](./docs/zh_cn/develop/how_to_develop.md)。
+**为什么要按这个顺序**
 
-向本模板仓库提交改动前，请阅读 [PR 规范](./docs/zh_cn/develop/pull_request_guidelines.md)。
+- **1 必须最先**：其余脚本都以大厅「前往作战」作为定位锚点，游戏没启动就跑不了。
+- **2 排在 8 之前**：物资挑战 ×7 扫荡要 280 吨吨值，体力不够会白跑一趟。
+- **9、10 放最后**：这两项结算的是「今天做了什么」，前面的脚本跑完（商店购买、消耗吨吨值、通关次数）进度才会涨，奖励红点才会亮。
 
-## 生态共建
+## 目录结构
 
-MAA 正计划建设为一类项目，而非舟的单一软件。
+```
+assets/
+├── interface.json                  # 任务入口定义（MFA / MaaPiCli 读取）
+└── resource/
+    └── pipeline/
+        ├── start_game.json
+        ├── stamina.json
+        ├── mimir.json
+        ├── shop.json
+        ├── guild.json
+        ├── park.json
+        ├── medium.json
+        ├── supply.json
+        ├── tasks.json
+        └── contract.json
+```
 
-若您的项目依赖于 MaaFramework，我们欢迎您将它命名为 MaaXXX, MXA, MAX 等等。当然，这是许可而不是限制，您也可以自由选择其他与 MAA 无关的名字，完全取决于您自己的想法！
+## 怎么用
 
-同时，我们也非常欢迎您提出 PR，在 [社区项目列表](https://github.com/MaaXYZ/MaaFramework#%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE) 中添加上您的项目！
+### 方式一：MFA（MFAAvalonia，图形界面）
 
-## 常见问题
+1. 下载 [MFA](https://github.com/SweetSmellFox/MFAAvalonia) 或任意支持 Project Interface 的 GUI；
+2. 把本项目目录作为项目打开，选择控制器（MuMu 等模拟器请用 **ADB** 连接，不要用 Win32 窗口模式，否则会截图黑屏）；
+3. 在任务列表里按上表顺序依次执行。
 
-请阅读 [常见问题](./docs/zh_cn/develop/faq.md)。
+### 方式二：MaaPiCli（命令行）
 
-## 鸣谢
+```bash
+./MaaPiCli.exe
+# 选择控制器 → 选择任务 → 运行
+```
 
-本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
+### 方式三：调试单个脚本（MaaMCP / maafw-cli）
 
-感谢以下开发者对本项目作出的贡献（下面链接改成你自己的项目地址）:
+跑之前请先手动把游戏切到**大厅**界面，再让脚本从对应入口开始。
 
-[![Contributors](https://contrib.rocks/image?repo=MaaXYZ/MaaFramework&max=1000)](https://github.com/MaaXYZ/MaaFramework/graphs/contributors)
+## 实现要点
+
+这些脚本里沉淀了几个比较实用的做法，供同样在学 MaaFramework 的人参考：
+
+1. **用 OCR 锚点而不是死坐标定位页面**：每个页面都用 1~3 处稳定文字做「多级 AND 链」确认（例如大厅用「前往作战 + 对策协议 + 底部导航」），避免误判到子界面后乱点。
+2. **待机屏保守卫**：游戏挂着不动会进入屏保（左下角出现「正在播放」唱片机 + 滚动歌词字幕），此时所有锚点都匹配不到。每个脚本入口都挂了 `屏保_待机` 节点：识别到「正在播放」就按一次返回键退出屏保，再复查一次，确认回到大厅才继续。
+3. **红点驱动领奖**：任务面板用 `ColorMatch` 检测领奖按钮上的红点，有就领、没有就跳过，避免在已领空的界面上空点。
+4. **失败即降级回大厅**：每个脚本的 `next` 都带兜底分支，某一步识别不到就退到上一级、最终回到大厅，不会卡死在半路。
+5. **分段跑**：部分工具链的 `run_pipeline` 有 60 秒客户端超时，超过 1 分钟的流程（如 2 分钟的战斗）建议拆成多段或用 GUI 直接跑。
+
+## 关于制作过程
+
+- 界面坐标、OCR 文案、等待时长，全部通过「截图 → 让大模型读图 → 给出节点 JSON → 真机跑 → 看结果改」的循环确定；
+- 大模型负责看图、写 Pipeline JSON、分析失败原因；真机验证和最终判断由人完成；
+- 也就是说，**这是一个「人和大模型协作调参」的产物**，不是逆向或自动化框架。
+
+## 致谢
+
+- [MaaFramework](https://github.com/MaaXYZ/MaaFramework) —— 整套 Pipeline 协议、控制器、OCR 能力都由它提供，没有它这个项目不可能存在；
+- [MaaPracticeBoilerplate](https://github.com/MaaXYZ/MaaPracticeBoilerplate) —— 本项目基于官方模板搭建；
+- [MaaMCP](https://github.com/MaaXYZ/MaaMCP)、[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia) 等周边工具；
+- **DeepSeek** —— 本次脚本的识别、编写与调试全程由 DeepSeek 大模型辅助完成。
+
+## 免责声明
+
+- 本项目**仅供学习与研究 MaaFramework 的图像识别与流程编排**，不提供任何游戏内数值修改、加速、破解功能；
+- 使用本脚本可能违反游戏用户协议，**存在账号被处罚的风险**，请自行评估后再决定是否使用；
+- 本项目与《深空之眼》开发商、发行商及 bilibili **没有任何关联**，未获得任何官方授权；
+- 因使用本项目产生的任何直接或间接损失（包括但不限于封号、数据丢失），**作者不承担任何责任**；
+- 游戏界面随时可能改版，脚本随时可能失效，作者不保证长期可用；
+- 如果你不喜欢自动化，请直接删掉这个仓库——它只是一个学习笔记。
+
+## 许可
+
+本项目基于 MaaPracticeBoilerplate 模板搭建，遵循原模板的 AGPL-3.0 许可。

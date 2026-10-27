@@ -1,0 +1,130 @@
+{
+    "对策协议领取": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "Click",
+        "target": [48, 122],
+        "post_delay": 2500,
+        "timeout": 15000,
+        "next": [
+            "屏保_待机",
+            "对策_任务",
+            "对策_领等级"
+        ]
+    },
+    "屏保_待机": {
+        "recognition": "OCR",
+        "expected": ["正在播放"],
+        "roi": [20, 590, 430, 90],
+        "action": "ClickKey",
+        "key": [4],
+        "pre_delay": 300,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "屏保_待机",
+            "对策_任务",
+            "对策_领等级"
+        ]
+    },
+    "对策_任务": {
+        "recognition": "OCR",
+        "expected": ["任务"],
+        "roi": [88, 648, 100, 48],
+        "action": "Click",
+        "target": [128, 671],
+        "post_delay": 2000,
+        "timeout": 6000,
+        "next": [
+            "对策_任务领取",
+            "对策_返回主页面"
+        ]
+    },
+    "对策_任务领取": {
+        "recognition": "OCR",
+        "expected": ["一键领取"],
+        "roi": [1040, 645, 230, 55],
+        "action": "Click",
+        "target": [1153, 671],
+        "post_delay": 2000,
+        "timeout": 5000,
+        "next": [
+            "对策_结算",
+            "对策_返回主页面"
+        ]
+    },
+    "对策_结算": {
+        "recognition": "OCR",
+        "expected": ["点击屏幕继续"],
+        "roi": [500, 655, 300, 45],
+        "action": "Click",
+        "target": [640, 676],
+        "pre_delay": 800,
+        "post_delay": 1500,
+        "timeout": 6000,
+        "next": [
+            "对策_结算",
+            "对策_返回主页面"
+        ]
+    },
+    "对策_返回主页面": {
+        "recognition": "OCR",
+        "expected": ["今日任务", "本周任务"],
+        "roi": [60, 90, 200, 220],
+        "action": "Click",
+        "target": [55, 38],
+        "post_delay": 2000,
+        "timeout": 6000,
+        "next": [
+            "对策_领等级",
+            "对策_返回大厅"
+        ]
+    },
+    "对策_领等级": {
+        "recognition": "OCR",
+        "expected": ["一键领取"],
+        "roi": [1040, 645, 230, 55],
+        "action": "Click",
+        "target": [1148, 671],
+        "post_delay": 2000,
+        "timeout": 5000,
+        "next": [
+            "对策_结算2",
+            "对策_返回大厅"
+        ]
+    },
+    "对策_结算2": {
+        "recognition": "OCR",
+        "expected": ["点击屏幕继续"],
+        "roi": [500, 655, 300, 45],
+        "action": "Click",
+        "target": [640, 676],
+        "pre_delay": 800,
+        "post_delay": 1500,
+        "timeout": 6000,
+        "next": [
+            "对策_结算2",
+            "对策_返回大厅"
+        ]
+    },
+    "对策_返回大厅": {
+        "recognition": "OCR",
+        "expected": ["基础合约", "进阶合约"],
+        "roi": [340, 195, 150, 90],
+        "action": "Click",
+        "target": [55, 38],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "对策_完成"
+        ]
+    },
+    "对策_完成": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "DoNothing",
+        "post_delay": 500
+    }
+}

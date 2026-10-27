@@ -1,0 +1,198 @@
+{
+    "启动深空之眼": {
+        "recognition": "DirectHit",
+        "action": "StartApp",
+        "package": "com.yongshi.tenojo.bilibili",
+        "post_delay": 2000,
+        "timeout": 180000,
+        "next": [
+            "屏保_待机",
+            "等待_加载中",
+            "标题_已加载_艾因索菲",
+            "标题_已加载_备用",
+            "区服_蒂卡拉",
+            "登录_奖励继续",
+            "弹窗_七日签到跳过",
+            "大厅_已进入"
+        ]
+    },
+    "屏保_待机": {
+        "recognition": "OCR",
+        "expected": ["正在播放"],
+        "roi": [20, 590, 430, 90],
+        "action": "ClickKey",
+        "key": [4],
+        "pre_delay": 300,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "屏保_待机",
+            "大厅_已进入"
+        ]
+    },
+    "等待_加载中": {
+        "recognition": "OCR",
+        "expected": ["客户端初始化", "正在加载场景"],
+        "roi": [0, 590, 420, 110],
+        "action": "DoNothing",
+        "post_delay": 4000,
+        "timeout": 300000,
+        "next": [
+            "标题_已加载_艾因索菲",
+            "标题_已加载_备用",
+            "登录_点击登录",
+            "登录_奖励继续"
+        ]
+    },
+    "标题_已加载_艾因索菲": {
+        "recognition": "OCR",
+        "expected": "艾因索菲",
+        "roi": [440, 515, 400, 95],
+        "action": "Click",
+        "target": [600, 320, 80, 80],
+        "post_delay": 3000,
+        "timeout": 300000,
+        "next": [
+            "登录_奖励继续",
+            "弹窗_七日签到跳过",
+            "大厅_已进入",
+            "弹窗_每日签到",
+            "弹窗_关闭",
+            "标题_已加载_备用"
+        ]
+    },
+    "标题_已加载_备用": {
+        "recognition": "OCR",
+        "expected": ["点击任意", "点击任意区域进入游戏"],
+        "roi": [440, 590, 410, 55],
+        "action": "Click",
+        "target": [600, 320, 80, 80],
+        "post_delay": 3000,
+        "timeout": 300000,
+        "next": [
+            "登录_奖励继续",
+            "弹窗_七日签到跳过",
+            "大厅_已进入",
+            "弹窗_每日签到",
+            "弹窗_关闭",
+            "标题_已加载_备用"
+        ]
+    },
+    "区服_蒂卡拉": {
+        "recognition": "OCR",
+        "expected": "蒂卡拉",
+        "roi": [520, 530, 240, 60],
+        "action": "Click",
+        "post_delay": 1500,
+        "timeout": 5000,
+        "next": [
+            "服务器弹窗_选择艾因索菲"
+        ]
+    },
+    "服务器弹窗_选择艾因索菲": {
+        "recognition": "OCR",
+        "expected": "艾因索菲",
+        "roi": [270, 250, 740, 180],
+        "action": "Click",
+        "post_delay": 1500,
+        "timeout": 8000,
+        "next": [
+            "标题_已加载_艾因索菲",
+            "标题_已加载_备用"
+        ]
+    },
+    "登录_点击登录": {
+        "recognition": "OCR",
+        "expected": ["登录", "点击登录", "一键登录", "立即登录"],
+        "action": "Click",
+        "post_delay": 2500,
+        "timeout": 300000,
+        "next": [
+            "服务器弹窗_选择艾因索菲",
+            "登录_奖励继续",
+            "弹窗_七日签到跳过",
+            "大厅_已进入",
+            "弹窗_关闭"
+        ]
+    },
+    "登录_奖励继续": {
+        "recognition": "OCR",
+        "expected": ["点击屏幕继续", "点击继续", "点击空白处继续"],
+        "roi": [440, 640, 400, 60],
+        "action": "Click",
+        "target": [640, 500],
+        "pre_delay": 1200,
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "登录_奖励继续",
+            "弹窗_七日签到跳过",
+            "大厅_已进入"
+        ]
+    },
+    "弹窗_七日签到跳过": {
+        "recognition": "OCR",
+        "expected": ["七日签到"],
+        "roi": [50, 90, 190, 300],
+        "action": "Click",
+        "target": [640, 690],
+        "post_delay": 1500,
+        "timeout": 8000,
+        "next": [
+            "大厅_已进入",
+            "登录_奖励继续",
+            "弹窗_每日签到",
+            "弹窗_关闭"
+        ]
+    },
+    "弹窗_每日签到": {
+        "recognition": "OCR",
+        "expected": "签到",
+        "action": "Click",
+        "post_delay": 1500,
+        "timeout": 8000,
+        "next": [
+            "弹窗_关闭",
+            "大厅_已进入"
+        ]
+    },
+    "弹窗_关闭": {
+        "recognition": "OCR",
+        "expected": ["关闭", "确定", "取消", "跳过", "知道了"],
+        "action": "Click",
+        "post_delay": 1500,
+        "timeout": 8000,
+        "next": [
+            "大厅_已进入"
+        ]
+    },
+    "大厅_已进入": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "DoNothing",
+        "timeout": 300000,
+        "next": [
+            "大厅_确认_左栏",
+            "大厅_已进入"
+        ]
+    },
+    "大厅_确认_左栏": {
+        "recognition": "OCR",
+        "expected": ["对策协议"],
+        "roi": [0, 120, 130, 70],
+        "action": "DoNothing",
+        "timeout": 30000,
+        "next": [
+            "大厅_确认_底栏"
+        ]
+    },
+    "大厅_确认_底栏": {
+        "recognition": "OCR",
+        "expected": ["修正者", "游园街"],
+        "roi": [450, 645, 600, 70],
+        "action": "DoNothing",
+        "timeout": 30000,
+        "next": []
+    }
+}

@@ -1,0 +1,199 @@
+{
+    "物资挑战": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "Click",
+        "target": [1167, 675],
+        "post_delay": 3000,
+        "timeout": 30000,
+        "next": [
+            "屏保_待机",
+            "物资_物资页",
+            "物资_完成"
+        ]
+    },
+    "屏保_待机": {
+        "recognition": "OCR",
+        "expected": ["正在播放"],
+        "roi": [20, 590, 430, 90],
+        "action": "ClickKey",
+        "key": [4],
+        "pre_delay": 300,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "屏保_待机",
+            "物资_物资页",
+            "物资_完成"
+        ]
+    },
+    "物资_物资页": {
+        "recognition": "OCR",
+        "expected": ["物资"],
+        "roi": [560, 645, 130, 55],
+        "action": "Click",
+        "target": [625, 673],
+        "post_delay": 3000,
+        "timeout": 10000,
+        "next": [
+            "物资_模拟作战",
+            "物资_完成"
+        ]
+    },
+    "物资_模拟作战": {
+        "recognition": "OCR",
+        "expected": ["模拟作战"],
+        "roi": [540, 535, 210, 60],
+        "action": "Click",
+        "target": [640, 528],
+        "post_delay": 3000,
+        "timeout": 10000,
+        "next": [
+            "物资_选节点"
+        ]
+    },
+    "物资_选节点": {
+        "recognition": "OCR",
+        "expected": ["表征-6"],
+        "roi": [900, 490, 160, 55],
+        "action": "Click",
+        "target": [957, 420],
+        "post_delay": 2500,
+        "timeout": 10000,
+        "next": [
+            "物资_倍数最大"
+        ]
+    },
+    "物资_倍数最大": {
+        "recognition": "OCR",
+        "expected": ["掉落倍数"],
+        "roi": [1000, 520, 150, 40],
+        "action": "Click",
+        "target": [1230, 573],
+        "post_delay": 900,
+        "timeout": 8000,
+        "next": [
+            "物资_倍数2"
+        ]
+    },
+    "物资_倍数2": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1230, 573],
+        "post_delay": 900,
+        "next": ["物资_倍数3"]
+    },
+    "物资_倍数3": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1230, 573],
+        "post_delay": 900,
+        "next": ["物资_倍数4"]
+    },
+    "物资_倍数4": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1230, 573],
+        "post_delay": 900,
+        "next": ["物资_倍数5"]
+    },
+    "物资_倍数5": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1230, 573],
+        "post_delay": 900,
+        "next": ["物资_倍数6"]
+    },
+    "物资_倍数6": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1230, 573],
+        "post_delay": 900,
+        "next": ["物资_扫荡"]
+    },
+    "物资_扫荡": {
+        "recognition": "OCR",
+        "expected": ["扫荡"],
+        "roi": [880, 640, 180, 60],
+        "action": "Click",
+        "target": [963, 671],
+        "post_delay": 2500,
+        "timeout": 10000,
+        "next": [
+            "物资_扫荡确定",
+            "物资_返回节点图"
+        ]
+    },
+    "物资_扫荡确定": {
+        "recognition": "OCR",
+        "expected": ["快速扫荡", "是否确认消耗"],
+        "roi": [400, 150, 700, 400],
+        "action": "Click",
+        "target": [890, 612],
+        "post_delay": 3000,
+        "timeout": 8000,
+        "next": [
+            "物资_扫荡完成",
+            "物资_返回节点图"
+        ]
+    },
+    "物资_扫荡完成": {
+        "recognition": "OCR",
+        "expected": ["扫荡完成"],
+        "roi": [30, 10, 280, 55],
+        "action": "Click",
+        "target": [1078, 667],
+        "post_delay": 3000,
+        "timeout": 20000,
+        "next": [
+            "物资_返回节点图",
+            "物资_完成"
+        ]
+    },
+    "物资_返回节点图": {
+        "recognition": "OCR",
+        "expected": ["掉落倍数", "可能掉落"],
+        "roi": [1000, 480, 260, 120],
+        "action": "Click",
+        "target": [55, 40],
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "物资_返回物资页",
+            "物资_完成"
+        ]
+    },
+    "物资_返回物资页": {
+        "recognition": "OCR",
+        "expected": ["酬金委托", "因子采集", "深层勘探"],
+        "roi": [360, 460, 560, 90],
+        "action": "Click",
+        "target": [55, 40],
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "物资_完成"
+        ]
+    },
+    "物资_返回大厅": {
+        "recognition": "OCR",
+        "expected": ["酬金委托", "因子采集"],
+        "roi": [370, 460, 520, 70],
+        "action": "Click",
+        "target": [55, 40],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "物资_完成"
+        ]
+    },
+    "物资_完成": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "DoNothing",
+        "timeout": 15000,
+        "next": []
+    }
+}

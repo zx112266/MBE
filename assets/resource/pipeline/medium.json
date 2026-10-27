@@ -1,0 +1,184 @@
+{
+    "介质攫取": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "Click",
+        "target": [1167, 675],
+        "post_delay": 3000,
+        "timeout": 30000,
+        "next": [
+            "屏保_待机",
+            "介质_刻印",
+            "介质_完成"
+        ]
+    },
+    "屏保_待机": {
+        "recognition": "OCR",
+        "expected": ["正在播放"],
+        "roi": [20, 590, 430, 90],
+        "action": "ClickKey",
+        "key": [4],
+        "pre_delay": 300,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "屏保_待机",
+            "介质_刻印",
+            "介质_完成"
+        ]
+    },
+    "介质_刻印": {
+        "recognition": "OCR",
+        "expected": ["刻印"],
+        "roi": [790, 645, 130, 55],
+        "action": "Click",
+        "target": [855, 673],
+        "post_delay": 3000,
+        "timeout": 10000,
+        "next": [
+            "介质_进入模式",
+            "介质_完成"
+        ]
+    },
+    "介质_进入模式": {
+        "recognition": "OCR",
+        "expected": ["介质攫取"],
+        "roi": [550, 505, 180, 60],
+        "action": "Click",
+        "target": [640, 520],
+        "post_delay": 3000,
+        "timeout": 10000,
+        "next": [
+            "介质_开始挑战"
+        ]
+    },
+    "介质_开始挑战": {
+        "recognition": "OCR",
+        "expected": ["开始挑战"],
+        "roi": [840, 625, 240, 70],
+        "action": "Click",
+        "target": [1019, 657],
+        "post_delay": 3000,
+        "timeout": 10000,
+        "next": [
+            "介质_作战开始"
+        ]
+    },
+    "介质_作战开始": {
+        "recognition": "OCR",
+        "expected": ["作战开始"],
+        "roi": [940, 645, 240, 70],
+        "action": "Click",
+        "target": [1119, 681],
+        "post_delay": 5000,
+        "timeout": 20000,
+        "next": [
+            "介质_等待结算"
+        ]
+    },
+    "介质_等待结算": {
+        "recognition": "OCR",
+        "expected": ["任务完成"],
+        "roi": [25, 5, 270, 60],
+        "action": "DoNothing",
+        "timeout": 220000,
+        "next": [
+            "介质_确认"
+        ]
+    },
+    "介质_确认": {
+        "recognition": "OCR",
+        "expected": ["确认"],
+        "roi": [950, 640, 180, 60],
+        "action": "Click",
+        "target": [1078, 667],
+        "post_delay": 3000,
+        "timeout": 15000,
+        "next": [
+            "介质_奖励领取"
+        ]
+    },
+    "介质_奖励领取": {
+        "recognition": "OCR",
+        "expected": ["奖励领取"],
+        "roi": [50, 630, 180, 60],
+        "action": "Click",
+        "target": [135, 660],
+        "post_delay": 2500,
+        "timeout": 15000,
+        "next": [
+            "介质_一键领取",
+            "介质_关闭奖励"
+        ]
+    },
+    "介质_一键领取": {
+        "recognition": "OCR",
+        "expected": ["一键领取"],
+        "roi": [890, 635, 210, 60],
+        "action": "Click",
+        "target": [1000, 667],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "介质_继续",
+            "介质_关闭奖励"
+        ]
+    },
+    "介质_继续": {
+        "recognition": "OCR",
+        "expected": ["点击屏幕继续"],
+        "roi": [440, 640, 400, 60],
+        "action": "Click",
+        "target": [640, 640],
+        "post_delay": 1800,
+        "timeout": 6000,
+        "next": [
+            "介质_关闭奖励"
+        ]
+    },
+    "介质_关闭奖励": {
+        "recognition": "OCR",
+        "expected": ["奖励领取"],
+        "roi": [500, 35, 320, 55],
+        "action": "Click",
+        "target": [1138, 58],
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "介质_返回刻印"
+        ]
+    },
+    "介质_返回刻印": {
+        "recognition": "OCR",
+        "expected": ["介质攫取", "今日最高积分"],
+        "roi": [20, 100, 210, 70],
+        "action": "Click",
+        "target": [55, 40],
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "介质_返回大厅"
+        ]
+    },
+    "介质_返回大厅": {
+        "recognition": "OCR",
+        "expected": ["战场清扫"],
+        "roi": [20, 375, 140, 45],
+        "action": "Click",
+        "target": [55, 40],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "介质_完成"
+        ]
+    },
+    "介质_完成": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "DoNothing",
+        "timeout": 15000,
+        "next": []
+    }
+}

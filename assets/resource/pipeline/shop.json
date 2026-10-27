@@ -1,0 +1,378 @@
+{
+    "商店每日采购": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "Click",
+        "target": [722, 674],
+        "post_delay": 2500,
+        "timeout": 30000,
+        "next": [
+            "屏保_待机",
+            "商店_进补给区"
+        ]
+    },
+    "屏保_待机": {
+        "recognition": "OCR",
+        "expected": ["正在播放"],
+        "roi": [20, 590, 430, 90],
+        "action": "ClickKey",
+        "key": [4],
+        "pre_delay": 300,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "屏保_待机",
+            "商店_进补给区"
+        ]
+    },
+    "商店_进补给区": {
+        "recognition": "OCR",
+        "expected": ["补给区"],
+        "roi": [240, 570, 280, 120],
+        "action": "Click",
+        "target": [378, 635],
+        "post_delay": 2500,
+        "timeout": 10000,
+        "next": [
+            "商店_切日常补给",
+            "商店_完成"
+        ]
+    },
+    "商店_切日常补给": {
+        "recognition": "OCR",
+        "expected": ["日常补给"],
+        "roi": [470, 85, 150, 50],
+        "action": "Click",
+        "target": [537, 112],
+        "post_delay": 2000,
+        "timeout": 10000,
+        "next": [
+            "商店_点免费",
+            "商店_返回补给区"
+        ]
+    },
+    "商店_点免费": {
+        "recognition": "OCR",
+        "expected": ["免费"],
+        "roi": [244, 370, 270, 50],
+        "action": "Click",
+        "post_delay": 2000,
+        "timeout": 6000,
+        "next": [
+            "商店_确认免费购买",
+            "商店_返回补给区"
+        ]
+    },
+    "商店_确认免费购买": {
+        "recognition": "OCR",
+        "expected": ["确定"],
+        "roi": [760, 585, 260, 55],
+        "action": "Click",
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "商店_领取动画",
+            "商店_返回补给区"
+        ]
+    },
+    "商店_领取动画": {
+        "recognition": "OCR",
+        "expected": ["点击屏幕继续"],
+        "roi": [500, 660, 290, 40],
+        "action": "Click",
+        "target": [640, 500],
+        "pre_delay": 1500,
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "商店_领取动画_重试",
+            "商店_返回补给区"
+        ]
+    },
+    "商店_领取动画_重试": {
+        "recognition": "OCR",
+        "expected": ["点击屏幕继续"],
+        "roi": [500, 660, 290, 40],
+        "action": "Click",
+        "target": [640, 500],
+        "pre_delay": 1200,
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "商店_返回补给区"
+        ]
+    },
+    "商店_返回补给区": {
+        "recognition": "OCR",
+        "expected": ["日常补给"],
+        "roi": [470, 85, 150, 50],
+        "action": "Click",
+        "target": [51, 40],
+        "post_delay": 2000,
+        "timeout": 10000,
+        "next": [
+            "商店_去交易区",
+            "商店_完成"
+        ]
+    },
+    "商店_去交易区": {
+        "recognition": "OCR",
+        "expected": ["百宝囊"],
+        "roi": [60, 95, 120, 45],
+        "action": "Click",
+        "target": [115, 635],
+        "post_delay": 2500,
+        "timeout": 10000,
+        "next": [
+            "商店_每日采购",
+            "商店_返回百宝囊"
+        ]
+    },
+    "商店_每日采购": {
+        "recognition": "OCR",
+        "expected": ["每日采购"],
+        "roi": [80, 95, 140, 50],
+        "action": "Click",
+        "target": [125, 118],
+        "post_delay": 2000,
+        "timeout": 10000,
+        "next": [
+            "商店_买情报_1",
+            "商店_返回交易区"
+        ]
+    },
+    "商店_买情报_1": {
+        "recognition": "OCR",
+        "expected": ["限购"],
+        "roi": [250, 262, 240, 32],
+        "action": "Click",
+        "target": [294, 343],
+        "post_delay": 2000,
+        "timeout": 5000,
+        "next": [
+            "商店_最大_1",
+            "商店_买情报_2"
+        ]
+    },
+    "商店_最大_1": {
+        "recognition": "OCR",
+        "expected": ["最大"],
+        "roi": [815, 483, 80, 32],
+        "action": "Click",
+        "target": [853, 498],
+        "post_delay": 800,
+        "timeout": 4000,
+        "next": [
+            "商店_购买_1",
+            "商店_买情报_2"
+        ]
+    },
+    "商店_购买_1": {
+        "recognition": "OCR",
+        "expected": ["购买"],
+        "roi": [900, 475, 175, 50],
+        "action": "Click",
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "商店_超额_1",
+            "商店_买情报_2"
+        ]
+    },
+    "商店_超额_1": {
+        "recognition": "OCR",
+        "expected": ["是否继续购买"],
+        "roi": [400, 330, 520, 40],
+        "action": "Click",
+        "target": [888, 550],
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "商店_买情报_2"
+        ]
+    },
+    "商店_买情报_2": {
+        "recognition": "OCR",
+        "expected": ["限购"],
+        "roi": [250, 262, 240, 32],
+        "action": "Click",
+        "target": [294, 343],
+        "post_delay": 2000,
+        "timeout": 5000,
+        "next": [
+            "商店_最大_2",
+            "商店_买情报_3"
+        ]
+    },
+    "商店_最大_2": {
+        "recognition": "OCR",
+        "expected": ["最大"],
+        "roi": [815, 483, 80, 32],
+        "action": "Click",
+        "target": [853, 498],
+        "post_delay": 800,
+        "timeout": 4000,
+        "next": [
+            "商店_购买_2",
+            "商店_买情报_3"
+        ]
+    },
+    "商店_购买_2": {
+        "recognition": "OCR",
+        "expected": ["购买"],
+        "roi": [900, 475, 175, 50],
+        "action": "Click",
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "商店_超额_2",
+            "商店_买情报_3"
+        ]
+    },
+    "商店_超额_2": {
+        "recognition": "OCR",
+        "expected": ["是否继续购买"],
+        "roi": [400, 330, 520, 40],
+        "action": "Click",
+        "target": [888, 550],
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "商店_买情报_3"
+        ]
+    },
+    "商店_买情报_3": {
+        "recognition": "OCR",
+        "expected": ["限购"],
+        "roi": [250, 262, 240, 32],
+        "action": "Click",
+        "target": [294, 343],
+        "post_delay": 2000,
+        "timeout": 5000,
+        "next": [
+            "商店_最大_3",
+            "商店_买情报_4"
+        ]
+    },
+    "商店_最大_3": {
+        "recognition": "OCR",
+        "expected": ["最大"],
+        "roi": [815, 483, 80, 32],
+        "action": "Click",
+        "target": [853, 498],
+        "post_delay": 800,
+        "timeout": 4000,
+        "next": [
+            "商店_购买_3",
+            "商店_买情报_4"
+        ]
+    },
+    "商店_购买_3": {
+        "recognition": "OCR",
+        "expected": ["购买"],
+        "roi": [900, 475, 175, 50],
+        "action": "Click",
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "商店_超额_3",
+            "商店_买情报_4"
+        ]
+    },
+    "商店_超额_3": {
+        "recognition": "OCR",
+        "expected": ["是否继续购买"],
+        "roi": [400, 330, 520, 40],
+        "action": "Click",
+        "target": [888, 550],
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "商店_买情报_4"
+        ]
+    },
+    "商店_买情报_4": {
+        "recognition": "OCR",
+        "expected": ["限购"],
+        "roi": [250, 262, 240, 32],
+        "action": "Click",
+        "target": [294, 343],
+        "post_delay": 2000,
+        "timeout": 5000,
+        "next": [
+            "商店_最大_4",
+            "商店_返回交易区"
+        ]
+    },
+    "商店_最大_4": {
+        "recognition": "OCR",
+        "expected": ["最大"],
+        "roi": [815, 483, 80, 32],
+        "action": "Click",
+        "target": [853, 498],
+        "post_delay": 800,
+        "timeout": 4000,
+        "next": [
+            "商店_购买_4",
+            "商店_返回交易区"
+        ]
+    },
+    "商店_购买_4": {
+        "recognition": "OCR",
+        "expected": ["购买"],
+        "roi": [900, 475, 175, 50],
+        "action": "Click",
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "商店_超额_4",
+            "商店_返回交易区"
+        ]
+    },
+    "商店_超额_4": {
+        "recognition": "OCR",
+        "expected": ["是否继续购买"],
+        "roi": [400, 330, 520, 40],
+        "action": "Click",
+        "target": [888, 550],
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "商店_返回交易区"
+        ]
+    },
+    "商店_返回交易区": {
+        "recognition": "OCR",
+        "expected": ["每日采购"],
+        "roi": [80, 95, 140, 50],
+        "action": "Click",
+        "target": [51, 40],
+        "post_delay": 2000,
+        "timeout": 10000,
+        "next": [
+            "商店_返回百宝囊",
+            "商店_完成"
+        ]
+    },
+    "商店_返回百宝囊": {
+        "recognition": "OCR",
+        "expected": ["百宝囊"],
+        "roi": [60, 95, 120, 45],
+        "action": "Click",
+        "target": [51, 40],
+        "post_delay": 2000,
+        "timeout": 10000,
+        "next": [
+            "商店_完成"
+        ]
+    },
+    "商店_完成": {
+        "recognition": "OCR",
+        "expected": ["前往作战"],
+        "roi": [1060, 640, 220, 80],
+        "action": "DoNothing",
+        "timeout": 15000,
+        "next": []
+    }
+}
