@@ -56,7 +56,7 @@
     "物资_选节点": {
         "recognition": "OCR",
         "expected": ["表征-6"],
-        "roi": [900, 490, 160, 55],
+        "roi": [895, 425, 175, 60],
         "action": "Click",
         "target": [957, 420],
         "post_delay": 2500,
