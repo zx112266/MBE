@@ -30,8 +30,8 @@ jobs:
       - uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: ${{ format('MaaXXX-{0}-{1}-*', matrix.os, matrix.arch) }}
-          mirrorchyan_rid: MaaXXX
+          filename: ${{ format('MBE-{0}-{1}-*', matrix.os, matrix.arch) }}
+          mirrorchyan_rid: MBE
           tag: ${{ inputs.tag }}
 
           os: ${{ matrix.os }}
