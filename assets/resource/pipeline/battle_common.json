@@ -1,0 +1,117 @@
+{
+    "战斗_普攻": {
+        "doc": "普通攻击：长枪图标，连续点击即可自动连招。实机验证：2026-10-28 练习室三连点生效。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1140, 545],
+        "post_delay": 250,
+        "next": [
+            "战斗_普攻"
+        ]
+    },
+    "战斗_普攻_三次": {
+        "doc": "普攻三连（有限次数版本），打完进入 next 指定的后续节点。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1140, 545],
+        "post_delay": 300,
+        "next": [
+            "战斗_普攻_二次"
+        ]
+    },
+    "战斗_普攻_二次": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1140, 545],
+        "post_delay": 300,
+        "next": [
+            "战斗_普攻_一次"
+        ]
+    },
+    "战斗_普攻_一次": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1140, 545],
+        "post_delay": 300,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_重击": {
+        "doc": "重攻击：长按普攻键 900ms（蓄力/重击）。",
+        "recognition": "DirectHit",
+        "action": "LongPress",
+        "target": [1140, 545],
+        "duration": 900,
+        "post_delay": 900,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_技能1": {
+        "doc": "技能1（星球轨道图标，外圈黄绿环）。可用时环亮。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [920, 380],
+        "post_delay": 600,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_技能2": {
+        "doc": "技能2（白色翅膀/齿轮图标）。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1085, 380],
+        "post_delay": 600,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_技能3": {
+        "doc": "技能3（红环 + 次数角标）。红环为充能态。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1200, 350],
+        "post_delay": 600,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_奥义": {
+        "doc": "奥义/终结（羽毛立柱图标，底部白光环亮起即可放）。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [995, 520],
+        "post_delay": 800,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_闪避": {
+        "doc": "闪避/冲刺（白色奔跑小人）。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [990, 604],
+        "post_delay": 500,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_锁定": {
+        "doc": "锁定/切换目标（小准星罗盘）。",
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [905, 533],
+        "post_delay": 500,
+        "next": [
+            "战斗_收招"
+        ]
+    },
+    "战斗_收招": {
+        "doc": "占位收招节点：实际使用时由调用方把 next 换成自己的后续节点（如 战斗_普攻 或 结束判定）。",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200
+    }
+}
