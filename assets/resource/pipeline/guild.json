@@ -1,39 +1,68 @@
 {
     "公会日常": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "Click",
-        "target": [819, 682],
+        "target": [
+            819,
+            682
+        ],
         "post_delay": 2500,
         "timeout": 30000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_公会",
             "公会_矩阵补给",
             "公会_完成"
         ]
     },
-    "屏保_待机": {
+    "屏保_待机_公会": {
         "recognition": "OCR",
-        "expected": ["正在播放"],
-        "roi": [20, 590, 430, 90],
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            590,
+            430,
+            90
+        ],
         "action": "ClickKey",
-        "key": [4],
+        "key": [
+            4
+        ],
         "pre_delay": 300,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_公会",
             "公会_矩阵补给",
             "公会_完成"
         ]
     },
     "公会_矩阵补给": {
         "recognition": "OCR",
-        "expected": ["矩阵补给"],
-        "roi": [1120, 645, 160, 70],
+        "expected": [
+            "矩阵补给"
+        ],
+        "roi": [
+            1120,
+            645,
+            160,
+            70
+        ],
         "action": "Click",
-        "target": [1175, 673],
+        "target": [
+            1175,
+            673
+        ],
         "post_delay": 2500,
         "timeout": 10000,
         "next": [
@@ -43,10 +72,20 @@
     },
     "公会_领取补给": {
         "recognition": "OCR",
-        "expected": ["领取"],
-        "roi": [500, 480, 300, 60],
+        "expected": [
+            "领取"
+        ],
+        "roi": [
+            500,
+            480,
+            300,
+            60
+        ],
         "action": "Click",
-        "target": [640, 509],
+        "target": [
+            640,
+            509
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -56,10 +95,20 @@
     },
     "公会_补给继续": {
         "recognition": "OCR",
-        "expected": ["点击屏幕继续"],
-        "roi": [500, 655, 290, 45],
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            500,
+            655,
+            290,
+            45
+        ],
         "action": "Click",
-        "target": [640, 690],
+        "target": [
+            640,
+            690
+        ],
         "pre_delay": 1200,
         "post_delay": 2000,
         "timeout": 8000,
@@ -70,10 +119,20 @@
     },
     "公会_补给返回": {
         "recognition": "OCR",
-        "expected": ["常规补给"],
-        "roi": [270, 105, 180, 45],
+        "expected": [
+            "常规补给"
+        ],
+        "roi": [
+            270,
+            105,
+            180,
+            45
+        ],
         "action": "Click",
-        "target": [31, 37],
+        "target": [
+            31,
+            37
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -83,10 +142,20 @@
     },
     "公会_任务入口": {
         "recognition": "OCR",
-        "expected": ["公会任务"],
-        "roi": [930, 645, 200, 70],
+        "expected": [
+            "公会任务"
+        ],
+        "roi": [
+            930,
+            645,
+            200,
+            70
+        ],
         "action": "Click",
-        "target": [1034, 673],
+        "target": [
+            1034,
+            673
+        ],
         "post_delay": 2500,
         "timeout": 10000,
         "next": [
@@ -97,7 +166,10 @@
     "公会_周目标_领取1": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1199, 170],
+        "target": [
+            1199,
+            170
+        ],
         "pre_delay": 600,
         "post_delay": 1500,
         "next": [
@@ -108,7 +180,10 @@
     "公会_周目标_领取2": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1199, 270],
+        "target": [
+            1199,
+            270
+        ],
         "pre_delay": 600,
         "post_delay": 1500,
         "next": [
@@ -119,7 +194,10 @@
     "公会_周目标_领取3": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1199, 370],
+        "target": [
+            1199,
+            370
+        ],
         "pre_delay": 600,
         "post_delay": 1500,
         "next": [
@@ -130,7 +208,10 @@
     "公会_周目标_领取4": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1199, 463],
+        "target": [
+            1199,
+            463
+        ],
         "pre_delay": 600,
         "post_delay": 1500,
         "next": [
@@ -140,10 +221,20 @@
     },
     "公会_任务继续": {
         "recognition": "OCR",
-        "expected": ["点击屏幕继续"],
-        "roi": [500, 655, 290, 45],
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            500,
+            655,
+            290,
+            45
+        ],
         "action": "Click",
-        "target": [640, 690],
+        "target": [
+            640,
+            690
+        ],
         "pre_delay": 1200,
         "post_delay": 2000,
         "timeout": 8000,
@@ -154,10 +245,20 @@
     },
     "公会_任务返回": {
         "recognition": "OCR",
-        "expected": ["公会每周目标"],
-        "roi": [460, 85, 220, 45],
+        "expected": [
+            "公会每周目标"
+        ],
+        "roi": [
+            460,
+            85,
+            220,
+            45
+        ],
         "action": "Click",
-        "target": [55, 40],
+        "target": [
+            55,
+            40
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -166,10 +267,20 @@
     },
     "公会_返回大厅": {
         "recognition": "OCR",
-        "expected": ["矩阵公会"],
-        "roi": [50, 95, 180, 50],
+        "expected": [
+            "矩阵公会"
+        ],
+        "roi": [
+            50,
+            95,
+            180,
+            50
+        ],
         "action": "Click",
-        "target": [55, 40],
+        "target": [
+            55,
+            40
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -178,8 +289,15 @@
     },
     "公会_完成": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "DoNothing",
         "timeout": 15000,
         "next": []

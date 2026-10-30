@@ -1,39 +1,68 @@
 {
     "体力获取": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "Click",
-        "target": [730, 32],
+        "target": [
+            730,
+            32
+        ],
         "post_delay": 1500,
         "timeout": 60000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_体力",
             "体力_点每日补给标签",
             "体力_完成"
         ]
     },
-    "屏保_待机": {
+    "屏保_待机_体力": {
         "recognition": "OCR",
-        "expected": ["正在播放"],
-        "roi": [20, 590, 430, 90],
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            590,
+            430,
+            90
+        ],
         "action": "ClickKey",
-        "key": [4],
+        "key": [
+            4
+        ],
         "pre_delay": 300,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_体力",
             "体力_点每日补给标签",
             "体力_完成"
         ]
     },
     "体力_点每日补给标签": {
         "recognition": "OCR",
-        "expected": ["每日补给"],
-        "roi": [820, 95, 180, 55],
+        "expected": [
+            "每日补给"
+        ],
+        "roi": [
+            820,
+            95,
+            180,
+            55
+        ],
         "action": "Click",
-        "target": [890, 120],
+        "target": [
+            890,
+            120
+        ],
         "post_delay": 1500,
         "timeout": 20000,
         "next": [
@@ -43,8 +72,15 @@
     },
     "体力_确认面板": {
         "recognition": "OCR",
-        "expected": ["每日上午"],
-        "roi": [580, 200, 180, 55],
+        "expected": [
+            "每日上午"
+        ],
+        "roi": [
+            580,
+            200,
+            180,
+            55
+        ],
         "action": "DoNothing",
         "post_delay": 500,
         "timeout": 20000,
@@ -57,8 +93,15 @@
     },
     "体力_领取_上午": {
         "recognition": "OCR",
-        "expected": ["后可领取"],
-        "roi": [615, 255, 180, 55],
+        "expected": [
+            "后可领取"
+        ],
+        "roi": [
+            615,
+            255,
+            180,
+            55
+        ],
         "action": "Click",
         "post_delay": 1500,
         "timeout": 10000,
@@ -68,8 +111,15 @@
     },
     "体力_领取_下午": {
         "recognition": "OCR",
-        "expected": ["后可领取"],
-        "roi": [872, 255, 190, 55],
+        "expected": [
+            "后可领取"
+        ],
+        "roi": [
+            872,
+            255,
+            190,
+            55
+        ],
         "action": "Click",
         "post_delay": 1500,
         "timeout": 10000,
@@ -79,10 +129,20 @@
     },
     "体力_已领_关闭": {
         "recognition": "OCR",
-        "expected": ["已领取"],
-        "roi": [620, 360, 420, 50],
+        "expected": [
+            "已领取"
+        ],
+        "roi": [
+            620,
+            360,
+            420,
+            50
+        ],
         "action": "Click",
-        "target": [730, 32],
+        "target": [
+            730,
+            32
+        ],
         "post_delay": 1500,
         "timeout": 10000,
         "next": [
@@ -92,7 +152,10 @@
     "体力_关闭面板": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [730, 32],
+        "target": [
+            730,
+            32
+        ],
         "post_delay": 1500,
         "next": [
             "体力_完成",
@@ -101,18 +164,35 @@
     },
     "体力_完成": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "DoNothing",
         "timeout": 15000,
         "next": []
     },
     "体力_兜底关闭面板": {
         "recognition": "OCR",
-        "expected": ["每日补给"],
-        "roi": [820, 95, 180, 55],
+        "expected": [
+            "每日补给"
+        ],
+        "roi": [
+            820,
+            95,
+            180,
+            55
+        ],
         "action": "Click",
-        "target": [730, 32],
+        "target": [
+            730,
+            32
+        ],
         "post_delay": 1500,
         "timeout": 5000,
         "next": [

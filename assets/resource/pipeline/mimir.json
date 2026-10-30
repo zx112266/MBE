@@ -1,39 +1,68 @@
 {
     "弥弥观测站": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "Click",
-        "target": [1198, 78],
+        "target": [
+            1198,
+            78
+        ],
         "post_delay": 2500,
         "timeout": 30000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_弥弥",
             "弥弥_点观测站",
             "弥弥_完成"
         ]
     },
-    "屏保_待机": {
+    "屏保_待机_弥弥": {
         "recognition": "OCR",
-        "expected": ["正在播放"],
-        "roi": [20, 590, 430, 90],
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            590,
+            430,
+            90
+        ],
         "action": "ClickKey",
-        "key": [4],
+        "key": [
+            4
+        ],
         "pre_delay": 300,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_弥弥",
             "弥弥_点观测站",
             "弥弥_完成"
         ]
     },
     "弥弥_点观测站": {
         "recognition": "OCR",
-        "expected": ["弥弥观测站"],
-        "roi": [1005, 318, 160, 52],
+        "expected": [
+            "弥弥观测站"
+        ],
+        "roi": [
+            1005,
+            318,
+            160,
+            52
+        ],
         "action": "Click",
-        "target": [1065, 349],
+        "target": [
+            1065,
+            349
+        ],
         "post_delay": 3000,
         "timeout": 10000,
         "next": [
@@ -44,10 +73,21 @@
     },
     "弥弥_领取": {
         "recognition": "OCR",
-        "expected": ["键领取", "一键领取"],
-        "roi": [860, 620, 200, 60],
+        "expected": [
+            "键领取",
+            "一键领取"
+        ],
+        "roi": [
+            860,
+            620,
+            200,
+            60
+        ],
         "action": "Click",
-        "target": [951, 647],
+        "target": [
+            951,
+            647
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -57,10 +97,21 @@
     },
     "弥弥_结算": {
         "recognition": "OCR",
-        "expected": ["空白处继续", "点击屏幕继续"],
-        "roi": [430, 505, 450, 65],
+        "expected": [
+            "空白处继续",
+            "点击屏幕继续"
+        ],
+        "roi": [
+            430,
+            505,
+            450,
+            65
+        ],
         "action": "Click",
-        "target": [640, 700],
+        "target": [
+            640,
+            700
+        ],
         "pre_delay": 600,
         "post_delay": 1500,
         "timeout": 6000,
@@ -71,10 +122,21 @@
     },
     "弥弥_派遣": {
         "recognition": "OCR",
-        "expected": ["键派遣", "一键派遣"],
-        "roi": [860, 620, 200, 60],
+        "expected": [
+            "键派遣",
+            "一键派遣"
+        ],
+        "roi": [
+            860,
+            620,
+            200,
+            60
+        ],
         "action": "Click",
-        "target": [951, 647],
+        "target": [
+            951,
+            647
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -84,10 +146,20 @@
     },
     "弥弥_返回": {
         "recognition": "OCR",
-        "expected": ["探索等级"],
-        "roi": [20, 520, 230, 70],
+        "expected": [
+            "探索等级"
+        ],
+        "roi": [
+            20,
+            520,
+            230,
+            70
+        ],
         "action": "Click",
-        "target": [55, 40],
+        "target": [
+            55,
+            40
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -97,10 +169,20 @@
     },
     "弥弥_关菜单": {
         "recognition": "OCR",
-        "expected": ["正在播放"],
-        "roi": [880, 55, 400, 60],
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            880,
+            55,
+            400,
+            60
+        ],
         "action": "Click",
-        "target": [400, 400],
+        "target": [
+            400,
+            400
+        ],
         "post_delay": 1500,
         "timeout": 6000,
         "next": [
@@ -109,8 +191,15 @@
     },
     "弥弥_完成": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "DoNothing",
         "timeout": 15000,
         "next": []

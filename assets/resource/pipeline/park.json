@@ -1,39 +1,68 @@
 {
     "游园街日常": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "Click",
-        "target": [1005, 682],
+        "target": [
+            1005,
+            682
+        ],
         "post_delay": 3000,
         "timeout": 30000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_游园",
             "游园_开面板",
             "游园_完成"
         ]
     },
-    "屏保_待机": {
+    "屏保_待机_游园": {
         "recognition": "OCR",
-        "expected": ["正在播放"],
-        "roi": [20, 590, 430, 90],
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            590,
+            430,
+            90
+        ],
         "action": "ClickKey",
-        "key": [4],
+        "key": [
+            4
+        ],
         "pre_delay": 300,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_游园",
             "游园_开面板",
             "游园_完成"
         ]
     },
     "游园_开面板": {
         "recognition": "OCR",
-        "expected": ["游园街面板"],
-        "roi": [900, 645, 220, 60],
+        "expected": [
+            "游园街面板"
+        ],
+        "roi": [
+            900,
+            645,
+            220,
+            60
+        ],
         "action": "Click",
-        "target": [937, 673],
+        "target": [
+            937,
+            673
+        ],
         "post_delay": 2500,
         "timeout": 10000,
         "next": [
@@ -43,10 +72,20 @@
     },
     "游园_领收益": {
         "recognition": "OCR",
-        "expected": ["领取收益"],
-        "roi": [940, 270, 210, 120],
+        "expected": [
+            "领取收益"
+        ],
+        "roi": [
+            940,
+            270,
+            210,
+            120
+        ],
         "action": "Click",
-        "target": [1044, 340],
+        "target": [
+            1044,
+            340
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -56,10 +95,20 @@
     },
     "游园_一键投喂": {
         "recognition": "OCR",
-        "expected": ["一键投喂"],
-        "roi": [980, 640, 210, 60],
+        "expected": [
+            "一键投喂"
+        ],
+        "roi": [
+            980,
+            640,
+            210,
+            60
+        ],
         "action": "Click",
-        "target": [1069, 662],
+        "target": [
+            1069,
+            662
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -68,10 +117,20 @@
     },
     "游园_委托入口": {
         "recognition": "OCR",
-        "expected": ["委托任务"],
-        "roi": [110, 415, 150, 40],
+        "expected": [
+            "委托任务"
+        ],
+        "roi": [
+            110,
+            415,
+            150,
+            40
+        ],
         "action": "Click",
-        "target": [1136, 435],
+        "target": [
+            1136,
+            435
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -82,10 +141,21 @@
     },
     "游园_委托完成弹窗": {
         "recognition": "OCR",
-        "expected": ["委托已完成", "确定"],
-        "roi": [400, 240, 480, 90],
+        "expected": [
+            "委托已完成",
+            "确定"
+        ],
+        "roi": [
+            400,
+            240,
+            480,
+            90
+        ],
         "action": "Click",
-        "target": [640, 659],
+        "target": [
+            640,
+            659
+        ],
         "pre_delay": 800,
         "post_delay": 1800,
         "timeout": 6000,
@@ -97,10 +167,20 @@
     },
     "游园_一键派遣": {
         "recognition": "OCR",
-        "expected": ["一键派遣"],
-        "roi": [1040, 640, 220, 60],
+        "expected": [
+            "一键派遣"
+        ],
+        "roi": [
+            1040,
+            640,
+            220,
+            60
+        ],
         "action": "Click",
-        "target": [1111, 666],
+        "target": [
+            1111,
+            666
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -110,10 +190,21 @@
     },
     "游园_委托返回": {
         "recognition": "OCR",
-        "expected": ["取消派遣", "前往任务"],
-        "roi": [140, 560, 200, 60],
+        "expected": [
+            "取消派遣",
+            "前往任务"
+        ],
+        "roi": [
+            140,
+            560,
+            200,
+            60
+        ],
         "action": "Click",
-        "target": [43, 37],
+        "target": [
+            43,
+            37
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -122,10 +213,20 @@
     },
     "游园_面板返回": {
         "recognition": "OCR",
-        "expected": ["游园街面板"],
-        "roi": [530, 20, 220, 55],
+        "expected": [
+            "游园街面板"
+        ],
+        "roi": [
+            530,
+            20,
+            220,
+            55
+        ],
         "action": "Click",
-        "target": [55, 40],
+        "target": [
+            55,
+            40
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -134,10 +235,20 @@
     },
     "游园_任务入口": {
         "recognition": "OCR",
-        "expected": ["游园任务"],
-        "roi": [770, 645, 190, 60],
+        "expected": [
+            "游园任务"
+        ],
+        "roi": [
+            770,
+            645,
+            190,
+            60
+        ],
         "action": "Click",
-        "target": [848, 676],
+        "target": [
+            848,
+            676
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -147,10 +258,20 @@
     },
     "游园_任务一键领取": {
         "recognition": "OCR",
-        "expected": ["一键领取"],
-        "roi": [850, 580, 180, 60],
+        "expected": [
+            "一键领取"
+        ],
+        "roi": [
+            850,
+            580,
+            180,
+            60
+        ],
         "action": "Click",
-        "target": [931, 612],
+        "target": [
+            931,
+            612
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -160,10 +281,20 @@
     },
     "游园_任务继续": {
         "recognition": "OCR",
-        "expected": ["点击屏幕继续"],
-        "roi": [440, 640, 400, 60],
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            440,
+            640,
+            400,
+            60
+        ],
         "action": "Click",
-        "target": [640, 640],
+        "target": [
+            640,
+            640
+        ],
         "post_delay": 1800,
         "timeout": 6000,
         "next": [
@@ -172,10 +303,20 @@
     },
     "游园_任务返回": {
         "recognition": "OCR",
-        "expected": ["当前积分"],
-        "roi": [230, 85, 230, 75],
+        "expected": [
+            "当前积分"
+        ],
+        "roi": [
+            230,
+            85,
+            230,
+            75
+        ],
         "action": "Click",
-        "target": [43, 37],
+        "target": [
+            43,
+            37
+        ],
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
@@ -184,10 +325,21 @@
     },
     "游园_街区返回": {
         "recognition": "OCR",
-        "expected": ["参观", "游园街面板"],
-        "roi": [1080, 645, 180, 60],
+        "expected": [
+            "参观",
+            "游园街面板"
+        ],
+        "roi": [
+            1080,
+            645,
+            180,
+            60
+        ],
         "action": "Click",
-        "target": [47, 37],
+        "target": [
+            47,
+            37
+        ],
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
@@ -196,8 +348,15 @@
     },
     "游园_完成": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "DoNothing",
         "timeout": 15000,
         "next": []

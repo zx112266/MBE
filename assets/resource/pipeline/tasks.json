@@ -1,31 +1,50 @@
 {
     "任务领取": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "Click",
-        "target": [1046, 83],
+        "target": [
+            1046,
+            83
+        ],
         "post_delay": 3000,
         "timeout": 30000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_任务",
             "任务_每日检查",
             "任务_周常入口",
             "任务_返回",
             "任务_完成"
         ]
     },
-    "屏保_待机": {
+    "屏保_待机_任务": {
         "recognition": "OCR",
-        "expected": ["正在播放"],
-        "roi": [20, 590, 430, 90],
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            590,
+            430,
+            90
+        ],
         "action": "ClickKey",
-        "key": [4],
+        "key": [
+            4
+        ],
         "pre_delay": 300,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
-            "屏保_待机",
+            "屏保_待机_任务",
             "任务_每日检查",
             "任务_周常入口",
             "任务_返回",
@@ -34,12 +53,28 @@
     },
     "任务_每日检查": {
         "recognition": "ColorMatch",
-        "lower": [150, 20, 20],
-        "upper": [255, 110, 110],
+        "lower": [
+            150,
+            20,
+            20
+        ],
+        "upper": [
+            255,
+            110,
+            110
+        ],
         "method": 4,
-        "roi": [1175, 650, 65, 45],
+        "roi": [
+            1175,
+            650,
+            65,
+            45
+        ],
         "action": "Click",
-        "target": [1156, 667],
+        "target": [
+            1156,
+            667
+        ],
         "pre_delay": 500,
         "post_delay": 2500,
         "timeout": 5000,
@@ -51,10 +86,20 @@
     },
     "任务_结算1": {
         "recognition": "OCR",
-        "expected": ["点击屏幕继续"],
-        "roi": [450, 640, 400, 60],
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            450,
+            640,
+            400,
+            60
+        ],
         "action": "Click",
-        "target": [640, 676],
+        "target": [
+            640,
+            676
+        ],
         "pre_delay": 800,
         "post_delay": 1500,
         "timeout": 5000,
@@ -66,12 +111,28 @@
     },
     "任务_每日检查2": {
         "recognition": "ColorMatch",
-        "lower": [150, 20, 20],
-        "upper": [255, 110, 110],
+        "lower": [
+            150,
+            20,
+            20
+        ],
+        "upper": [
+            255,
+            110,
+            110
+        ],
         "method": 4,
-        "roi": [1175, 650, 65, 45],
+        "roi": [
+            1175,
+            650,
+            65,
+            45
+        ],
         "action": "Click",
-        "target": [1156, 667],
+        "target": [
+            1156,
+            667
+        ],
         "pre_delay": 500,
         "post_delay": 2500,
         "timeout": 3000,
@@ -82,10 +143,20 @@
     },
     "任务_结算2": {
         "recognition": "OCR",
-        "expected": ["点击屏幕继续"],
-        "roi": [450, 640, 400, 60],
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            450,
+            640,
+            400,
+            60
+        ],
         "action": "Click",
-        "target": [640, 676],
+        "target": [
+            640,
+            676
+        ],
         "pre_delay": 800,
         "post_delay": 1500,
         "timeout": 5000,
@@ -96,10 +167,20 @@
     },
     "任务_周常入口": {
         "recognition": "OCR",
-        "expected": ["周常任务"],
-        "roi": [30, 175, 170, 50],
+        "expected": [
+            "周常任务"
+        ],
+        "roi": [
+            30,
+            175,
+            170,
+            50
+        ],
         "action": "Click",
-        "target": [77, 198],
+        "target": [
+            77,
+            198
+        ],
         "post_delay": 2000,
         "timeout": 6000,
         "next": [
@@ -109,12 +190,28 @@
     },
     "任务_周常检查": {
         "recognition": "ColorMatch",
-        "lower": [150, 20, 20],
-        "upper": [255, 110, 110],
+        "lower": [
+            150,
+            20,
+            20
+        ],
+        "upper": [
+            255,
+            110,
+            110
+        ],
         "method": 4,
-        "roi": [1175, 650, 65, 45],
+        "roi": [
+            1175,
+            650,
+            65,
+            45
+        ],
         "action": "Click",
-        "target": [1155, 667],
+        "target": [
+            1155,
+            667
+        ],
         "pre_delay": 500,
         "post_delay": 2500,
         "timeout": 5000,
@@ -125,10 +222,20 @@
     },
     "任务_结算3": {
         "recognition": "OCR",
-        "expected": ["点击屏幕继续"],
-        "roi": [450, 640, 400, 60],
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            450,
+            640,
+            400,
+            60
+        ],
         "action": "Click",
-        "target": [640, 676],
+        "target": [
+            640,
+            676
+        ],
         "pre_delay": 800,
         "post_delay": 1500,
         "timeout": 5000,
@@ -139,10 +246,21 @@
     },
     "任务_返回": {
         "recognition": "OCR",
-        "expected": ["每日任务", "周常任务"],
-        "roi": [30, 90, 180, 130],
+        "expected": [
+            "每日任务",
+            "周常任务"
+        ],
+        "roi": [
+            30,
+            90,
+            180,
+            130
+        ],
         "action": "Click",
-        "target": [55, 38],
+        "target": [
+            55,
+            38
+        ],
         "post_delay": 2000,
         "timeout": 6000,
         "next": [
@@ -151,8 +269,15 @@
     },
     "任务_完成": {
         "recognition": "OCR",
-        "expected": ["前往作战"],
-        "roi": [1060, 640, 220, 80],
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
         "action": "DoNothing",
         "timeout": 15000,
         "next": []
