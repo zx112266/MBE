@@ -89,6 +89,7 @@
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
+            "游园_收益继续",
             "游园_一键投喂",
             "游园_委托入口"
         ]
@@ -96,7 +97,7 @@
     "游园_一键投喂": {
         "recognition": "OCR",
         "expected": [
-            "一键投喂"
+            "投喂"
         ],
         "roi": [
             980,
@@ -109,8 +110,9 @@
             1069,
             662
         ],
-        "post_delay": 2000,
-        "timeout": 8000,
+        "pre_delay": 300,
+        "post_delay": 1500,
+        "timeout": 3000,
         "next": [
             "游园_委托入口"
         ]
@@ -134,8 +136,8 @@
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
-            "游园_委托完成弹窗",
             "游园_一键派遣",
+            "游园_委托完成弹窗",
             "游园_委托返回"
         ]
     },
@@ -158,7 +160,7 @@
         ],
         "pre_delay": 800,
         "post_delay": 1800,
-        "timeout": 6000,
+        "timeout": 3000,
         "next": [
             "游园_委托完成弹窗",
             "游园_一键派遣",
@@ -168,21 +170,22 @@
     "游园_一键派遣": {
         "recognition": "OCR",
         "expected": [
-            "一键派遣"
+            "前往任务"
         ],
         "roi": [
-            1040,
-            640,
-            220,
-            60
+            60,
+            540,
+            1200,
+            110
         ],
         "action": "Click",
         "target": [
-            1111,
-            666
+            1163,
+            667
         ],
-        "post_delay": 2500,
-        "timeout": 8000,
+        "pre_delay": 300,
+        "post_delay": 1800,
+        "timeout": 3000,
         "next": [
             "游园_委托完成弹窗",
             "游园_委托返回"
@@ -191,14 +194,13 @@
     "游园_委托返回": {
         "recognition": "OCR",
         "expected": [
-            "取消派遣",
-            "前往任务"
+            "取消派遣"
         ],
         "roi": [
-            140,
-            560,
-            200,
-            60
+            60,
+            540,
+            1200,
+            110
         ],
         "action": "Click",
         "target": [
@@ -206,7 +208,7 @@
             37
         ],
         "post_delay": 2000,
-        "timeout": 8000,
+        "timeout": 3000,
         "next": [
             "游园_面板返回"
         ]
@@ -275,6 +277,7 @@
         "post_delay": 2500,
         "timeout": 8000,
         "next": [
+            "游园_积分上限提示",
             "游园_任务继续",
             "游园_任务返回"
         ]
@@ -296,8 +299,9 @@
             640
         ],
         "post_delay": 1800,
-        "timeout": 6000,
+        "timeout": 3000,
         "next": [
+            "游园_自选奖励_1",
             "游园_任务返回"
         ]
     },
@@ -360,5 +364,169 @@
         "action": "DoNothing",
         "timeout": 15000,
         "next": []
+    },
+    "游园_收益继续": {
+        "recognition": "OCR",
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            440,
+            640,
+            400,
+            60
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            690
+        ],
+        "pre_delay": 800,
+        "post_delay": 1200,
+        "timeout": 3000,
+        "next": [
+            "游园_一键投喂",
+            "游园_委托入口"
+        ]
+    },
+    "游园_积分上限提示": {
+        "recognition": "OCR",
+        "expected": [
+            "积分已达上限"
+        ],
+        "roi": [
+            150,
+            300,
+            1000,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            889,
+            560
+        ],
+        "pre_delay": 500,
+        "post_delay": 1500,
+        "timeout": 5000,
+        "next": [
+            "游园_任务继续",
+            "游园_任务返回"
+        ]
+    },
+    "游园_自选奖励_1": {
+        "recognition": "OCR",
+        "expected": [
+            "可任选多份奖励"
+        ],
+        "roi": [
+            400,
+            140,
+            500,
+            60
+        ],
+        "action": "Click",
+        "target": [
+            250,
+            400
+        ],
+        "pre_delay": 600,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "游园_自选奖励_2"
+        ]
+    },
+    "游园_自选奖励_2": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            250,
+            400
+        ],
+        "post_delay": 700,
+        "next": [
+            "游园_自选奖励_3"
+        ]
+    },
+    "游园_自选奖励_3": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            250,
+            400
+        ],
+        "post_delay": 700,
+        "next": [
+            "游园_自选奖励_4"
+        ]
+    },
+    "游园_自选奖励_4": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            250,
+            400
+        ],
+        "post_delay": 700,
+        "next": [
+            "游园_自选奖励_5"
+        ]
+    },
+    "游园_自选奖励_5": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            250,
+            400
+        ],
+        "post_delay": 700,
+        "next": [
+            "游园_自选奖励_6"
+        ]
+    },
+    "游园_自选奖励_6": {
+        "recognition": "OCR",
+        "expected": [
+            "需兑换数量",
+            "确定"
+        ],
+        "roi": [
+            300,
+            560,
+            700,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            616
+        ],
+        "post_delay": 1800,
+        "timeout": 5000,
+        "next": [
+            "游园_自选继续"
+        ]
+    },
+    "游园_自选继续": {
+        "recognition": "OCR",
+        "expected": [
+            "点击屏幕继续"
+        ],
+        "roi": [
+            440,
+            640,
+            400,
+            60
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            676
+        ],
+        "post_delay": 1200,
+        "timeout": 6000,
+        "next": [
+            "游园_任务返回"
+        ]
     }
 }

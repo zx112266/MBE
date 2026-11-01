@@ -216,6 +216,7 @@
         "timeout": 10000,
         "next": [
             "物资_扫荡确定",
+            "物资_体力弹窗",
             "物资_返回节点图"
         ]
     },
@@ -286,7 +287,9 @@
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
+            "物资_返回关卡图",
             "物资_返回物资页",
+            "物资_返回主菜单",
             "物资_完成"
         ]
     },
@@ -311,6 +314,7 @@
         "post_delay": 2000,
         "timeout": 8000,
         "next": [
+            "物资_返回主菜单",
             "物资_完成"
         ]
     },
@@ -340,16 +344,165 @@
     "物资_完成": {
         "recognition": "OCR",
         "expected": [
-            "前往作战"
+            "前往作战",
+            "对策协议",
+            "游园街",
+            "修正者"
         ],
         "roi": [
-            1060,
-            640,
-            220,
-            80
+            0,
+            0,
+            1280,
+            720
         ],
         "action": "DoNothing",
         "timeout": 15000,
         "next": []
+    },
+    "物资_返回主菜单": {
+        "recognition": "OCR",
+        "expected": [
+            "刻印",
+            "挑战"
+        ],
+        "roi": [
+            0,
+            640,
+            1280,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            55,
+            40
+        ],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "物资_完成"
+        ]
+    },
+    "物资_体力弹窗": {
+        "recognition": "OCR",
+        "expected": [
+            "补充吨吨值",
+            "吨吨值太低",
+            "体力不足"
+        ],
+        "roi": [
+            0,
+            0,
+            1280,
+            300
+        ],
+        "action": "ClickKey",
+        "key": [
+            4
+        ],
+        "pre_delay": 500,
+        "post_delay": 2000,
+        "timeout": 4000,
+        "next": [
+            "物资_次数最少"
+        ]
+    },
+    "物资_次数最少": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            941,
+            573
+        ],
+        "pre_delay": 500,
+        "post_delay": 1200,
+        "next": [
+            "物资_次数最多"
+        ]
+    },
+    "物资_次数最多": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            1234,
+            573
+        ],
+        "pre_delay": 300,
+        "post_delay": 1500,
+        "next": [
+            "物资_扫荡2"
+        ]
+    },
+    "物资_扫荡2": {
+        "recognition": "OCR",
+        "expected": [
+            "扫荡"
+        ],
+        "roi": [
+            900,
+            645,
+            130,
+            55
+        ],
+        "action": "Click",
+        "target": [
+            963,
+            671
+        ],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "物资_扫荡确定",
+            "物资_放弃扫荡",
+            "物资_返回节点图"
+        ]
+    },
+    "物资_放弃扫荡": {
+        "recognition": "OCR",
+        "expected": [
+            "补充吨吨值",
+            "吨吨值太低",
+            "体力不足"
+        ],
+        "roi": [
+            0,
+            0,
+            1280,
+            300
+        ],
+        "action": "ClickKey",
+        "key": [
+            4
+        ],
+        "pre_delay": 500,
+        "post_delay": 2500,
+        "timeout": 4000,
+        "next": [
+            "物资_返回节点图"
+        ]
+    },
+    "物资_返回关卡图": {
+        "recognition": "OCR",
+        "expected": [
+            "表征-6",
+            "表征-5"
+        ],
+        "roi": [
+            0,
+            300,
+            1280,
+            420
+        ],
+        "action": "Click",
+        "target": [
+            55,
+            40
+        ],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "物资_返回物资页",
+            "物资_返回主菜单",
+            "物资_完成"
+        ]
     }
 }

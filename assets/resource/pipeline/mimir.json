@@ -66,6 +66,7 @@
         "post_delay": 3000,
         "timeout": 10000,
         "next": [
+            "弥弥_全部探索中",
             "弥弥_领取",
             "弥弥_派遣",
             "弥弥_完成"
@@ -203,5 +204,22 @@
         "action": "DoNothing",
         "timeout": 15000,
         "next": []
+    },
+    "弥弥_全部探索中": {
+        "recognition": "OCR",
+        "expected": [
+            "探索中"
+        ],
+        "roi": [
+            300,
+            90,
+            700,
+            430
+        ],
+        "action": "DoNothing",
+        "timeout": 4000,
+        "next": [
+            "弥弥_返回"
+        ]
     }
 }
