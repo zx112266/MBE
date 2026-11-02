@@ -18,6 +18,7 @@
         "post_delay": 2500,
         "timeout": 30000,
         "next": [
+            "公会_联合攻坚入口",
             "屏保_待机_公会",
             "公会_矩阵补给",
             "公会_完成"
@@ -42,7 +43,6 @@
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
-            "屏保_待机_公会",
             "公会_矩阵补给",
             "公会_完成"
         ]
@@ -409,6 +409,262 @@
         "next": [
             "公会_任务入口",
             "公会_返回大厅"
+        ]
+    },
+    "公会_联合攻坚入口": {
+        "recognition": "OCR",
+        "expected": [
+            "联合攻坚"
+        ],
+        "roi": [
+            930,
+            90,
+            330,
+            120
+        ],
+        "action": "Click",
+        "target": [
+            1090,
+            180
+        ],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "公会_选节点",
+            "屏保_待机_公会",
+            "公会_矩阵补给"
+        ]
+    },
+    "公会_选节点": {
+        "recognition": "OCR",
+        "expected": [
+            "交错结点"
+        ],
+        "roi": [
+            400,
+            430,
+            220,
+            60
+        ],
+        "action": "Click",
+        "target": [
+            515,
+            455
+        ],
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "公会_作战次数检查",
+            "公会_准备作战",
+            "公会_返回地图"
+        ]
+    },
+    "公会_准备作战": {
+        "recognition": "OCR",
+        "expected": [
+            "准备作战"
+        ],
+        "roi": [
+            1000,
+            640,
+            240,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            1085,
+            672
+        ],
+        "post_delay": 3000,
+        "timeout": 8000,
+        "next": [
+            "公会_作战开始",
+            "公会_返回地图"
+        ]
+    },
+    "公会_作战开始": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始"
+        ],
+        "roi": [
+            1050,
+            640,
+            220,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            1131,
+            670
+        ],
+        "post_delay": 1500,
+        "timeout": 15000,
+        "next": [
+            "公会_战斗等待",
+            "公会_返回地图"
+        ]
+    },
+    "公会_战斗等待": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 10000,
+        "timeout": 3000,
+        "next": [
+            "公会_战斗判定",
+            "公会_战斗_继续"
+        ]
+    },
+    "公会_战斗判定": {
+        "recognition": "OCR",
+        "expected": [
+            "任务完成"
+        ],
+        "roi": [
+            0,
+            0,
+            320,
+            64
+        ],
+        "action": "Click",
+        "target": [
+            1074,
+            667
+        ],
+        "post_delay": 3000,
+        "timeout": 3000,
+        "next": [
+            "公会_首战红点",
+            "公会_返回地图"
+        ]
+    },
+    "公会_首战红点": {
+        "recognition": "ColorMatch",
+        "lower": [
+            200,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            110,
+            110
+        ],
+        "method": 4,
+        "roi": [
+            1200,
+            8,
+            30,
+            30
+        ],
+        "action": "Click",
+        "target": [
+            1100,
+            40
+        ],
+        "post_delay": 2500,
+        "timeout": 4000,
+        "next": [
+            "公会_获得物品",
+            "公会_返回地图"
+        ]
+    },
+    "公会_获得物品": {
+        "recognition": "OCR",
+        "expected": [
+            "获得物品"
+        ],
+        "roi": [
+            470,
+            140,
+            340,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            655
+        ],
+        "post_delay": 2000,
+        "timeout": 6000,
+        "next": [
+            "公会_返回地图"
+        ]
+    },
+    "公会_返回地图": {
+        "recognition": "OCR",
+        "expected": [
+            "裂隙征兆"
+        ],
+        "roi": [
+            20,
+            80,
+            230,
+            110
+        ],
+        "action": "Click",
+        "target": [
+            55,
+            40
+        ],
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "公会_返回地图",
+            "公会_矩阵补给",
+            "公会_返回公会主页",
+            "公会_完成"
+        ]
+    },
+    "公会_返回公会主页": {
+        "recognition": "OCR",
+        "expected": [
+            "矩阵公会"
+        ],
+        "roi": [
+            50,
+            95,
+            180,
+            50
+        ],
+        "action": "Click",
+        "target": [
+            55,
+            40
+        ],
+        "post_delay": 2000,
+        "timeout": 8000,
+        "next": [
+            "屏保_待机_公会",
+            "公会_矩阵补给",
+            "公会_完成"
+        ]
+    },
+    "公会_战斗_继续": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 500,
+        "timeout": 3000,
+        "next": [
+            "公会_战斗等待"
+        ]
+    },
+    "公会_作战次数检查": {
+        "recognition": "OCR",
+        "expected": [
+            "0/3"
+        ],
+        "roi": [
+            1000,
+            600,
+            250,
+            50
+        ],
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "公会_返回地图",
+            "公会_准备作战"
         ]
     }
 }
