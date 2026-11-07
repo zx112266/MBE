@@ -641,8 +641,7 @@
         "post_delay": 2000,
         "timeout": 10000,
         "next": [
-            "商店_返回百宝囊",
-            "商店_完成"
+            "商店_进交易中心"
         ],
         "pre_delay": 2000
     },
@@ -683,5 +682,155 @@
         "action": "DoNothing",
         "timeout": 15000,
         "next": []
+    },
+    "商店_进交易中心": {
+        "recognition": "OCR",
+        "expected": [
+            "交易中心"
+        ],
+        "roi": [
+            60,
+            165,
+            180,
+            55
+        ],
+        "action": "Click",
+        "target": [
+            96,
+            187
+        ],
+        "pre_delay": 500,
+        "post_delay": 2000,
+        "timeout": 1200,
+        "next": [
+            "商店_进情报兑换"
+        ]
+    },
+    "商店_进情报兑换": {
+        "recognition": "OCR",
+        "expected": [
+            "情报兑换"
+        ],
+        "roi": [
+            600,
+            75,
+            220,
+            55
+        ],
+        "action": "Click",
+        "target": [
+            697,
+            107
+        ],
+        "pre_delay": 500,
+        "post_delay": 2000,
+        "timeout": 1200,
+        "next": [
+            "商店_兑换红点",
+            "商店_情报返回"
+        ]
+    },
+    "商店_兑换红点": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 8,
+        "roi": [
+            365,
+            640,
+            50,
+            40
+        ],
+        "action": "DoNothing",
+        "timeout": 1200,
+        "next": [
+            "商店_点情报徽章兑换",
+            "商店_情报返回"
+        ]
+    },
+    "商店_点情报徽章兑换": {
+        "recognition": "OCR",
+        "expected": [
+            "情报徽章兑换"
+        ],
+        "roi": [
+            240,
+            635,
+            220,
+            60
+        ],
+        "action": "Click",
+        "target": [
+            315,
+            672
+        ],
+        "pre_delay": 800,
+        "post_delay": 2000,
+        "timeout": 1500,
+        "next": [
+            "商店_兑换确认",
+            "商店_情报返回"
+        ]
+    },
+    "商店_兑换确认": {
+        "recognition": "OCR",
+        "expected": [
+            "满超越"
+        ],
+        "roi": [
+            250,
+            470,
+            800,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            893,
+            611
+        ],
+        "pre_delay": 800,
+        "post_delay": 2500,
+        "timeout": 2000,
+        "next": [
+            "商店_兑换完成"
+        ]
+    },
+    "商店_兑换完成": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 1500,
+        "next": [
+            "商店_情报返回"
+        ]
+    },
+    "商店_情报返回": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "max_hit": 8,
+        "next": [
+            "商店_完成",
+            "商店_退一级"
+        ]
+    },
+    "商店_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "max_hit": 5,
+        "post_delay": 1500,
+        "next": [
+            "商店_情报返回"
+        ]
     }
 }
