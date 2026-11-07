@@ -1,0 +1,666 @@
+{
+    "公会周末战斗": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 500,
+        "max_hit": 10,
+        "next": [
+            "公会周末_大厅检查",
+            "屏保_待机_公休"
+        ]
+    },
+    "公会周末_大厅检查": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            819,
+            682
+        ],
+        "pre_delay": 2000,
+        "post_delay": 2500,
+        "timeout": 30000,
+        "next": [
+            "公会周末_联合攻坚",
+            "公会周末_完成"
+        ]
+    },
+    "公会周末_联合攻坚": {
+        "recognition": "OCR",
+        "expected": [
+            "联合攻坚"
+        ],
+        "roi": [
+            900,
+            90,
+            300,
+            120
+        ],
+        "action": "Click",
+        "pre_delay": 1500,
+        "post_delay": 2500,
+        "timeout": 8000,
+        "next": [
+            "公会周末_前往调查",
+            "公会周末_完成"
+        ]
+    },
+    "公会周末_前往调查": {
+        "recognition": "OCR",
+        "expected": [
+            "前往调查"
+        ],
+        "roi": [
+            520,
+            300,
+            260,
+            100
+        ],
+        "action": "Click",
+        "target": [
+            660,
+            360
+        ],
+        "pre_delay": 1500,
+        "post_delay": 3000,
+        "timeout": 8000,
+        "next": [
+            "公会周末_观察"
+        ]
+    },
+    "公会周末_观察": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 1000,
+        "next": [
+            "公会周末_四档判定",
+            "公会周末_返回大厅"
+        ]
+    },
+    "公会周末_完成": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200,
+        "next": []
+    },
+    "屏保_待机_公休": {
+        "recognition": "OCR",
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            590,
+            430,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            462,
+            16
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "max_hit": 3,
+        "next": [
+            "屏保_返回_公休"
+        ]
+    },
+    "屏保_返回_公休": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 2000,
+        "max_hit": 3,
+        "next": [
+            "公会周末战斗"
+        ]
+    },
+    "公会周末_准备作战": {
+        "recognition": "OCR",
+        "expected": [
+            "准备作战"
+        ],
+        "roi": [
+            1000,
+            638,
+            250,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            1092,
+            660
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2500,
+        "timeout": 6000,
+        "next": [
+            "公会周末_作战开始",
+            "公会周末_返回大厅"
+        ]
+    },
+    "公会周末_作战开始": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始"
+        ],
+        "roi": [
+            1040,
+            638,
+            240,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            1090,
+            656
+        ],
+        "pre_delay": 1500,
+        "post_delay": 3000,
+        "timeout": 8000,
+        "next": [
+            "公会周末_战斗等待",
+            "公会周末_返回大厅"
+        ]
+    },
+    "公会周末_战斗等待": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 30000,
+        "next": [
+            "公会周末_战斗判定",
+            "公会周末_战斗等待"
+        ],
+        "max_hit": 20
+    },
+    "公会周末_战斗判定": {
+        "recognition": "OCR",
+        "expected": [
+            "任务完成"
+        ],
+        "roi": [
+            0,
+            0,
+            320,
+            64
+        ],
+        "action": "Click",
+        "target": [
+            1078,
+            668
+        ],
+        "post_delay": 3000,
+        "timeout": 3000,
+        "next": [
+            "公会周末_领档1",
+            "公会周末_挑战奖励",
+            "公会周末_返回BOSS"
+        ]
+    },
+    "公会周末_确认": {
+        "recognition": "OCR",
+        "expected": [
+            "确认",
+            "再次挑战"
+        ],
+        "roi": [
+            860,
+            640,
+            300,
+            60
+        ],
+        "action": "Click",
+        "target": [
+            1078,
+            668
+        ],
+        "post_delay": 3000,
+        "timeout": 3000,
+        "next": [
+            "公会周末_战斗等待"
+        ]
+    },
+    "公会周末_领档1": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 20,
+        "roi": [
+            115,
+            251,
+            60,
+            44
+        ],
+        "action": "Click",
+        "target": [
+            140,
+            273
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_领档2"
+        ]
+    },
+    "公会周末_领档2": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 20,
+        "roi": [
+            115,
+            325,
+            60,
+            44
+        ],
+        "action": "Click",
+        "target": [
+            140,
+            347
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_领档3"
+        ]
+    },
+    "公会周末_领档3": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 20,
+        "roi": [
+            115,
+            403,
+            60,
+            44
+        ],
+        "action": "Click",
+        "target": [
+            140,
+            425
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_领档4"
+        ]
+    },
+    "公会周末_领档4": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 20,
+        "roi": [
+            115,
+            478,
+            60,
+            44
+        ],
+        "action": "Click",
+        "target": [
+            140,
+            500
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_挑战奖励"
+        ]
+    },
+    "公会周末_获得物品": {
+        "recognition": "OCR",
+        "expected": [
+            "获得物品",
+            "点击屏幕继续"
+        ],
+        "roi": [
+            440,
+            620,
+            400,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            642,
+            674
+        ],
+        "pre_delay": 1500,
+        "post_delay": 1800,
+        "timeout": 3000,
+        "max_hit": 8,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_领档1",
+            "公会周末_领档2",
+            "公会周末_领档3",
+            "公会周末_领档4",
+            "公会周末_挑战奖励"
+        ]
+    },
+    "公会周末_挑战奖励": {
+        "recognition": "OCR",
+        "expected": [
+            "挑战奖励"
+        ],
+        "roi": [
+            70,
+            618,
+            190,
+            55
+        ],
+        "action": "Click",
+        "target": [
+            140,
+            637
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2500,
+        "timeout": 4000,
+        "next": [
+            "公会周末_挑战领1",
+            "公会周末_挑战领2",
+            "公会周末_挑战领3",
+            "公会周末_挑战领4",
+            "公会周末_挑战关闭"
+        ]
+    },
+    "公会周末_挑战领1": {
+        "recognition": "ColorMatch",
+        "lower": [
+            210,
+            120,
+            40
+        ],
+        "upper": [
+            255,
+            200,
+            120
+        ],
+        "count": 150,
+        "roi": [
+            1005,
+            177,
+            70,
+            56
+        ],
+        "action": "Click",
+        "target": [
+            1037,
+            205
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_挑战领2"
+        ]
+    },
+    "公会周末_挑战领2": {
+        "recognition": "ColorMatch",
+        "lower": [
+            210,
+            120,
+            40
+        ],
+        "upper": [
+            255,
+            200,
+            120
+        ],
+        "count": 150,
+        "roi": [
+            1005,
+            304,
+            70,
+            56
+        ],
+        "action": "Click",
+        "target": [
+            1037,
+            332
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_挑战领3"
+        ]
+    },
+    "公会周末_挑战领3": {
+        "recognition": "ColorMatch",
+        "lower": [
+            210,
+            120,
+            40
+        ],
+        "upper": [
+            255,
+            200,
+            120
+        ],
+        "count": 150,
+        "roi": [
+            1005,
+            431,
+            70,
+            56
+        ],
+        "action": "Click",
+        "target": [
+            1037,
+            459
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_挑战领4"
+        ]
+    },
+    "公会周末_挑战领4": {
+        "recognition": "ColorMatch",
+        "lower": [
+            210,
+            120,
+            40
+        ],
+        "upper": [
+            255,
+            200,
+            120
+        ],
+        "count": 150,
+        "roi": [
+            1005,
+            558,
+            70,
+            56
+        ],
+        "action": "Click",
+        "target": [
+            1037,
+            586
+        ],
+        "pre_delay": 1200,
+        "post_delay": 2200,
+        "timeout": 2500,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_挑战关闭"
+        ]
+    },
+    "公会周末_挑战关闭": {
+        "recognition": "OCR",
+        "expected": [
+            "挑战奖励"
+        ],
+        "roi": [
+            400,
+            30,
+            500,
+            50
+        ],
+        "action": "Click",
+        "target": [
+            1135,
+            60
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "next": [
+            "公会周末_获得物品",
+            "公会周末_返回BOSS"
+        ]
+    },
+    "公会周末_返回BOSS": {
+        "recognition": "OCR",
+        "expected": [
+            "准备作战"
+        ],
+        "roi": [
+            1000,
+            638,
+            250,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2000,
+        "timeout": 4000,
+        "next": [
+            "公会周末_返回大厅"
+        ]
+    },
+    "公会周末_返回大厅": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 300,
+        "max_hit": 12,
+        "next": [
+            "公会周末_大厅判定",
+            "公会周末_退一级"
+        ]
+    },
+    "公会周末_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2500,
+        "max_hit": 6,
+        "next": [
+            "公会周末_返回大厅"
+        ]
+    },
+    "公会周末_大厅判定": {
+        "recognition": "OCR",
+        "expected": [
+            "仓库",
+            "修正者",
+            "探测"
+        ],
+        "roi": [
+            450,
+            650,
+            900,
+            60
+        ],
+        "action": "DoNothing",
+        "post_delay": 300,
+        "timeout": 2500,
+        "next": [
+            "公会周末_完成"
+        ]
+    },
+    "公会周末_四档判定": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 20,
+        "roi": [
+            110,
+            250,
+            80,
+            290
+        ],
+        "action": "DoNothing",
+        "post_delay": 300,
+        "timeout": 2500,
+        "next": [
+            "公会周末_准备作战"
+        ]
+    }
+}

@@ -1,30 +1,4 @@
 {
-    "公会日常": {
-        "recognition": "OCR",
-        "expected": [
-            "前往作战"
-        ],
-        "roi": [
-            1060,
-            640,
-            220,
-            80
-        ],
-        "action": "Click",
-        "target": [
-            819,
-            682
-        ],
-        "post_delay": 2500,
-        "timeout": 30000,
-        "next": [
-            "公会_联合攻坚入口",
-            "屏保_待机_公会",
-            "公会_矩阵补给",
-            "公会_完成"
-        ],
-        "pre_delay": 2000
-    },
     "屏保_待机_公会": {
         "recognition": "OCR",
         "expected": [
@@ -36,42 +10,18 @@
             430,
             90
         ],
-        "action": "ClickKey",
-        "key": [
-            4
-        ],
-        "pre_delay": 2000,
-        "post_delay": 2000,
-        "timeout": 3000,
-        "next": [
-            "公会_矩阵补给",
-            "公会_完成"
-        ]
-    },
-    "公会_矩阵补给": {
-        "recognition": "OCR",
-        "expected": [
-            "矩阵补给"
-        ],
-        "roi": [
-            1120,
-            645,
-            160,
-            70
-        ],
         "action": "Click",
         "target": [
-            1175,
-            673
+            462,
+            16
         ],
-        "post_delay": 2500,
-        "timeout": 10000,
+        "pre_delay": 1500,
+        "post_delay": 2000,
+        "timeout": 3000,
+        "max_hit": 3,
         "next": [
-            "公会_已领_直接关闭",
-            "公会_领取补给",
-            "公会_补给返回"
-        ],
-        "pre_delay": 2000
+            "屏保_返回_公会"
+        ]
     },
     "公会_领取补给": {
         "recognition": "OCR",
@@ -100,21 +50,22 @@
     "公会_补给继续": {
         "recognition": "OCR",
         "expected": [
-            "点击屏幕继续"
+            "点击屏幕继续",
+            "获得物品"
         ],
         "roi": [
-            500,
-            655,
-            290,
-            45
+            440,
+            620,
+            400,
+            90
         ],
         "action": "Click",
         "target": [
-            640,
-            690
+            642,
+            674
         ],
         "pre_delay": 2000,
-        "post_delay": 2000,
+        "post_delay": 1800,
         "timeout": 8000,
         "next": [
             "公会_补给继续",
@@ -134,8 +85,8 @@
         ],
         "action": "Click",
         "target": [
-            31,
-            37
+            462,
+            16
         ],
         "post_delay": 2000,
         "timeout": 8000,
@@ -440,7 +391,8 @@
         "next": [
             "公会_选节点",
             "屏保_待机_公会",
-            "公会_矩阵补给"
+            "公会_补给红点",
+            "公会_完成"
         ],
         "pre_delay": 2000
     },
@@ -629,8 +581,8 @@
         "timeout": 8000,
         "next": [
             "公会_返回地图",
-            "公会_矩阵补给",
             "公会_返回公会主页",
+            "公会_补给红点",
             "公会_完成"
         ],
         "pre_delay": 2000
@@ -655,7 +607,7 @@
         "timeout": 8000,
         "next": [
             "屏保_待机_公会",
-            "公会_矩阵补给",
+            "公会_补给红点",
             "公会_完成"
         ],
         "pre_delay": 2000
@@ -685,6 +637,88 @@
         "next": [
             "公会_返回地图",
             "公会_准备作战"
+        ]
+    },
+    "公会日常": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 500,
+        "max_hit": 10,
+        "next": [
+            "公会_大厅检查",
+            "屏保_待机_公会"
+        ]
+    },
+    "公会_大厅检查": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            819,
+            682
+        ],
+        "post_delay": 2500,
+        "timeout": 30000,
+        "next": [
+            "公会_联合攻坚入口",
+            "屏保_待机_公会",
+            "公会_补给红点",
+            "公会_完成"
+        ],
+        "pre_delay": 2000
+    },
+    "屏保_返回_公会": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 2000,
+        "max_hit": 3,
+        "next": [
+            "公会日常"
+        ]
+    },
+    "公会_补给红点": {
+        "recognition": "ColorMatch",
+        "lower": [
+            150,
+            40,
+            40
+        ],
+        "upper": [
+            255,
+            140,
+            140
+        ],
+        "count": 30,
+        "roi": [
+            1200,
+            636,
+            45,
+            34
+        ],
+        "action": "Click",
+        "target": [
+            1175,
+            673
+        ],
+        "pre_delay": 1500,
+        "post_delay": 2500,
+        "timeout": 3000,
+        "next": [
+            "公会_领取补给",
+            "公会_已领_直接关闭",
+            "公会_补给返回"
         ]
     }
 }
