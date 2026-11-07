@@ -586,7 +586,8 @@
     "公会_获得物品": {
         "recognition": "OCR",
         "expected": [
-            "获得物品"
+            "获得物品",
+            "点击屏幕继续"
         ],
         "roi": [
             470,
@@ -596,15 +597,17 @@
         ],
         "action": "Click",
         "target": [
-            640,
-            655
+            642,
+            674
         ],
         "post_delay": 2000,
         "timeout": 6000,
         "next": [
+            "公会_获得物品",
             "公会_返回地图"
         ],
-        "pre_delay": 2000
+        "pre_delay": 2000,
+        "max_hit": 6
     },
     "公会_返回地图": {
         "recognition": "OCR",
