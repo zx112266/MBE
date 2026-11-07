@@ -21,7 +21,8 @@
             "屏保_待机_游园",
             "游园_开面板",
             "游园_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "屏保_待机_游园": {
         "recognition": "OCR",
@@ -38,7 +39,7 @@
         "key": [
             4
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
@@ -68,7 +69,8 @@
         "next": [
             "游园_领收益",
             "游园_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_领收益": {
         "recognition": "OCR",
@@ -92,7 +94,8 @@
             "游园_收益继续",
             "游园_一键投喂",
             "游园_委托入口"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_一键投喂": {
         "recognition": "OCR",
@@ -110,7 +113,7 @@
             1069,
             662
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 3000,
         "next": [
@@ -139,7 +142,8 @@
             "游园_一键派遣",
             "游园_委托完成弹窗",
             "游园_委托返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_委托完成弹窗": {
         "recognition": "OCR",
@@ -158,7 +162,7 @@
             640,
             659
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1800,
         "timeout": 3000,
         "next": [
@@ -183,7 +187,7 @@
             1163,
             667
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 1800,
         "timeout": 3000,
         "next": [
@@ -211,7 +215,8 @@
         "timeout": 3000,
         "next": [
             "游园_面板返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_面板返回": {
         "recognition": "OCR",
@@ -233,7 +238,8 @@
         "timeout": 8000,
         "next": [
             "游园_任务入口"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_任务入口": {
         "recognition": "OCR",
@@ -256,7 +262,8 @@
         "next": [
             "游园_任务一键领取",
             "游园_任务返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_任务一键领取": {
         "recognition": "OCR",
@@ -280,7 +287,8 @@
             "游园_积分上限提示",
             "游园_任务继续",
             "游园_任务返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_任务继续": {
         "recognition": "OCR",
@@ -303,7 +311,8 @@
         "next": [
             "游园_自选奖励_1",
             "游园_任务返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_任务返回": {
         "recognition": "OCR",
@@ -325,7 +334,8 @@
         "timeout": 8000,
         "next": [
             "游园_街区返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_街区返回": {
         "recognition": "OCR",
@@ -348,7 +358,8 @@
         "timeout": 8000,
         "next": [
             "游园_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_完成": {
         "recognition": "OCR",
@@ -381,7 +392,7 @@
             640,
             690
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1200,
         "timeout": 3000,
         "next": [
@@ -405,7 +416,7 @@
             889,
             560
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 5000,
         "next": [
@@ -429,7 +440,7 @@
             250,
             400
         ],
-        "pre_delay": 600,
+        "pre_delay": 2000,
         "post_delay": 700,
         "timeout": 5000,
         "next": [
@@ -446,7 +457,8 @@
         "post_delay": 700,
         "next": [
             "游园_自选奖励_3"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_自选奖励_3": {
         "recognition": "DirectHit",
@@ -458,7 +470,8 @@
         "post_delay": 700,
         "next": [
             "游园_自选奖励_4"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_自选奖励_4": {
         "recognition": "DirectHit",
@@ -470,7 +483,8 @@
         "post_delay": 700,
         "next": [
             "游园_自选奖励_5"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_自选奖励_5": {
         "recognition": "DirectHit",
@@ -482,7 +496,8 @@
         "post_delay": 700,
         "next": [
             "游园_自选奖励_6"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_自选奖励_6": {
         "recognition": "OCR",
@@ -505,7 +520,8 @@
         "timeout": 5000,
         "next": [
             "游园_自选继续"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "游园_自选继续": {
         "recognition": "OCR",
@@ -527,6 +543,7 @@
         "timeout": 6000,
         "next": [
             "游园_任务返回"
-        ]
+        ],
+        "pre_delay": 2000
     }
 }

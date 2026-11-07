@@ -3,138 +3,83 @@
         "recognition": "DirectHit",
         "action": "StartApp",
         "package": "com.yongshi.tenojo.bilibili",
-        "post_delay": 2000,
+        "post_delay": 1500,
         "timeout": 180000,
         "next": [
-            "启动_健康提示",
-            "启动_服务器选择",
+            "启动_守卫"
+        ]
+    },
+    "启动_守卫": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 100,
+        "max_hit": 60,
+        "next": [
+            "屏保_待机",
+            "弹窗_玩家资料",
+            "弹窗_网络错误",
+            "大厅_已进入",
+            "弹窗_获得物品",
+            "弹窗_七日签到",
+            "弹窗_每日签到",
             "等待_加载中",
-            "登录_奖励继续",
-            "标题_已加载_艾因索菲",
-            "标题_已加载_备用",
-            "区服_蒂卡拉",
-            "弹窗_七日签到跳过",
-            "大厅_已进入"
+            "启动_点击进入",
+            "登录_点击登录",
+            "启动_系统弹窗",
+            "停滞计时_1",
+            "停滞重启_1",
+            "停滞计时_2",
+            "停滞重启_2",
+            "停滞计时_3",
+            "停滞重启_3",
+            "启动_守卫"
+        ]
+    },
+    "启动_系统弹窗": {
+        "recognition": "OCR",
+        "expected": [
+            "允许",
+            "仅在使用中允许"
+        ],
+        "roi": [
+            300,
+            300,
+            680,
+            300
+        ],
+        "action": "Click",
+        "post_delay": 600,
+        "timeout": 500,
+        "max_hit": 2,
+        "pre_delay": 2000,
+        "next": [
+            "启动_守卫"
         ]
     },
     "等待_加载中": {
         "recognition": "OCR",
         "expected": [
-            "客户端初始化",
-            "正在加载场景"
+            "语音",
+            "正在加载",
+            "加载中",
+            "检查更新",
+            "资源",
+            "解压",
+            "分析"
         ],
         "roi": [
             0,
-            590,
-            420,
-            110
+            600,
+            700,
+            90
         ],
         "action": "DoNothing",
-        "post_delay": 4000,
-        "timeout": 60000,
+        "post_delay": 2000,
+        "timeout": 700,
+        "max_hit": 30,
         "next": [
-            "标题_已加载_艾因索菲",
-            "标题_已加载_备用",
-            "启动_服务器选择",
-            "登录_奖励继续",
-            "弹窗_七日签到跳过",
-            "弹窗_每日签到",
-            "弹窗_关闭",
-            "大厅_已进入"
-        ]
-    },
-    "标题_已加载_艾因索菲": {
-        "recognition": "OCR",
-        "expected": "艾因索菲",
-        "roi": [
-            440,
-            515,
-            400,
-            95
-        ],
-        "action": "Click",
-        "target": [
-            600,
-            320,
-            80,
-            80
-        ],
-        "post_delay": 3000,
-        "timeout": 20000,
-        "next": [
-            "登录_奖励继续",
-            "弹窗_七日签到跳过",
-            "大厅_已进入",
-            "弹窗_每日签到",
-            "弹窗_关闭",
-            "标题_已加载_备用",
             "等待_加载中",
-            "启动_服务器选择"
-        ]
-    },
-    "标题_已加载_备用": {
-        "recognition": "OCR",
-        "expected": [
-            "点击任意",
-            "点击任意区域进入游戏"
-        ],
-        "roi": [
-            440,
-            590,
-            410,
-            55
-        ],
-        "action": "Click",
-        "target": [
-            600,
-            320,
-            80,
-            80
-        ],
-        "post_delay": 3000,
-        "timeout": 20000,
-        "next": [
-            "登录_奖励继续",
-            "弹窗_七日签到跳过",
-            "大厅_已进入",
-            "弹窗_每日签到",
-            "弹窗_关闭",
-            "标题_已加载_备用",
-            "等待_加载中",
-            "启动_服务器选择"
-        ]
-    },
-    "区服_蒂卡拉": {
-        "recognition": "OCR",
-        "expected": "蒂卡拉",
-        "roi": [
-            520,
-            530,
-            240,
-            60
-        ],
-        "action": "Click",
-        "post_delay": 1500,
-        "timeout": 5000,
-        "next": [
-            "服务器弹窗_选择艾因索菲"
-        ]
-    },
-    "服务器弹窗_选择艾因索菲": {
-        "recognition": "OCR",
-        "expected": "艾因索菲",
-        "roi": [
-            270,
-            250,
-            740,
-            180
-        ],
-        "action": "Click",
-        "post_delay": 1500,
-        "timeout": 8000,
-        "next": [
-            "标题_已加载_艾因索菲",
-            "标题_已加载_备用"
+            "启动_守卫"
         ]
     },
     "登录_点击登录": {
@@ -145,202 +90,349 @@
             "一键登录",
             "立即登录"
         ],
+        "roi": [
+            380,
+            540,
+            520,
+            140
+        ],
         "action": "Click",
-        "post_delay": 2500,
-        "timeout": 20000,
+        "post_delay": 1200,
+        "timeout": 500,
+        "max_hit": 4,
+        "pre_delay": 2000,
         "next": [
-            "服务器弹窗_选择艾因索菲",
-            "登录_奖励继续",
-            "弹窗_七日签到跳过",
-            "大厅_已进入",
-            "弹窗_关闭"
+            "启动_守卫"
         ]
     },
-    "登录_奖励继续": {
-        "recognition": "OCR",
-        "expected": [
-            "点击屏幕继续",
-            "点击继续",
-            "点击空白处继续"
-        ],
+    "弹窗_获得物品": {
+        "recognition": "TemplateMatch",
+        "template": "UI/弹窗_获得物品.png",
+        "threshold": 0.85,
         "roi": [
-            440,
-            640,
-            400,
-            60
+            500,
+            55,
+            280,
+            175
         ],
         "action": "Click",
         "target": [
             640,
-            500
+            655
         ],
-        "pre_delay": 1200,
-        "post_delay": 2000,
-        "timeout": 8000,
+        "post_delay": 800,
+        "timeout": 800,
+        "max_hit": 6,
+        "pre_delay": 2000,
         "next": [
-            "登录_奖励继续",
-            "弹窗_七日签到跳过",
-            "大厅_已进入"
+            "启动_守卫"
         ]
     },
-    "弹窗_七日签到跳过": {
+    "弹窗_七日签到": {
         "recognition": "OCR",
         "expected": [
             "七日签到"
         ],
         "roi": [
-            50,
-            90,
-            190,
-            300
+            300,
+            85,
+            230,
+            75
         ],
         "action": "Click",
         "target": [
-            640,
-            690
+            462,
+            16
         ],
-        "post_delay": 1500,
-        "timeout": 8000,
+        "post_delay": 800,
+        "timeout": 500,
+        "max_hit": 2,
+        "pre_delay": 1000,
         "next": [
-            "大厅_已进入",
-            "登录_奖励继续",
-            "弹窗_每日签到",
-            "弹窗_关闭"
+            "弹窗_七日签到_返回"
+        ]
+    },
+    "弹窗_七日签到_返回": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 800,
+        "max_hit": 2,
+        "pre_delay": 500,
+        "next": [
+            "启动_守卫"
         ]
     },
     "弹窗_每日签到": {
         "recognition": "OCR",
-        "expected": "签到",
-        "action": "Click",
-        "post_delay": 1500,
-        "timeout": 8000,
-        "next": [
-            "弹窗_关闭",
-            "大厅_已进入"
-        ]
-    },
-    "弹窗_关闭": {
-        "recognition": "OCR",
         "expected": [
-            "关闭",
-            "确定",
-            "取消",
-            "跳过",
-            "知道了"
+            "每日签到"
+        ],
+        "roi": [
+            30,
+            70,
+            420,
+            340
         ],
         "action": "Click",
-        "post_delay": 1500,
-        "timeout": 8000,
+        "post_delay": 1000,
+        "timeout": 500,
+        "max_hit": 3,
+        "pre_delay": 2000,
         "next": [
-            "大厅_已进入"
+            "启动_守卫"
+        ]
+    },
+    "弹窗_玩家资料": {
+        "recognition": "OCR",
+        "expected": [
+            "宿舍大厅"
+        ],
+        "roi": [
+            590,
+            378,
+            170,
+            42
+        ],
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 800,
+        "timeout": 500,
+        "max_hit": 2,
+        "pre_delay": 500,
+        "next": [
+            "启动_守卫"
+        ]
+    },
+    "屏保_待机": {
+        "recognition": "OCR",
+        "expected": [
+            "正在播放"
+        ],
+        "roi": [
+            20,
+            600,
+            240,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            462,
+            16
+        ],
+        "post_delay": 800,
+        "timeout": 500,
+        "max_hit": 2,
+        "pre_delay": 500,
+        "next": [
+            "屏保_返回"
+        ]
+    },
+    "屏保_返回": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 800,
+        "max_hit": 3,
+        "pre_delay": 500,
+        "next": [
+            "启动_守卫"
         ]
     },
     "大厅_已进入": {
         "recognition": "OCR",
         "expected": [
-            "前往作战"
+            "仓库"
         ],
         "roi": [
-            1060,
-            640,
-            220,
-            80
+            872,
+            663,
+            90,
+            32
         ],
         "action": "DoNothing",
-        "timeout": 20000,
+        "post_delay": 300,
+        "timeout": 400,
+        "max_hit": 6,
         "next": [
-            "大厅_确认_左栏",
-            "大厅_已进入"
+            "大厅_确认_修正者",
+            "弹窗_获得物品",
+            "屏保_待机",
+            "启动_守卫"
         ]
     },
-    "大厅_确认_左栏": {
+    "大厅_确认_修正者": {
         "recognition": "OCR",
         "expected": [
-            "对策协议"
+            "修正者"
         ],
         "roi": [
-            0,
-            120,
-            130,
-            70
+            495,
+            663,
+            90,
+            32
         ],
         "action": "DoNothing",
-        "timeout": 30000,
+        "post_delay": 200,
+        "timeout": 400,
+        "max_hit": 6,
         "next": [
-            "大厅_确认_底栏"
+            "大厅_确认_探测",
+            "弹窗_获得物品",
+            "屏保_待机",
+            "启动_守卫"
         ]
     },
-    "大厅_确认_底栏": {
+    "大厅_确认_探测": {
         "recognition": "OCR",
         "expected": [
-            "修正者",
-            "游园街"
+            "探测"
         ],
         "roi": [
-            450,
-            645,
             600,
-            70
+            663,
+            80,
+            32
         ],
         "action": "DoNothing",
-        "timeout": 30000,
+        "post_delay": 200,
+        "timeout": 400,
+        "max_hit": 3,
+        "next": [
+            "弹窗_获得物品",
+            "弹窗_七日签到",
+            "屏保_待机",
+            "大厅_完成"
+        ]
+    },
+    "大厅_完成": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 100,
         "next": []
     },
-    "启动_健康提示": {
+    "启动_点击进入": {
         "recognition": "OCR",
         "expected": [
-            "健康游戏忠告",
-            "适龄提示",
-            "CADPA"
+            "点击任意",
+            "艾因索菲"
         ],
         "roi": [
-            0,
-            540,
-            1280,
-            180
+            400,
+            520,
+            480,
+            120
         ],
+        "pre_delay": 2000,
         "action": "Click",
         "target": [
             640,
-            600
+            360
         ],
-        "post_delay": 2500,
-        "timeout": 8000,
+        "post_delay": 3000,
+        "timeout": 800,
+        "max_hit": 3,
         "next": [
-            "启动_健康提示",
-            "启动_服务器选择",
-            "等待_加载中",
-            "登录_奖励继续",
-            "标题_已加载_艾因索菲",
-            "标题_已加载_备用",
-            "大厅_已进入"
+            "启动_守卫"
         ]
     },
-    "启动_服务器选择": {
+    "弹窗_网络错误": {
         "recognition": "OCR",
         "expected": [
-            "蒂卡拉",
-            "未创建"
+            "连接版本服务器失败",
+            "40014"
         ],
         "roi": [
-            270,
-            360,
-            740,
+            400,
+            300,
+            560,
             120
         ],
         "action": "Click",
         "target": [
             640,
-            298
+            560
         ],
         "post_delay": 3000,
-        "timeout": 10000,
+        "timeout": 500,
+        "max_hit": 5,
         "next": [
-            "等待_加载中",
-            "标题_已加载_艾因索菲",
-            "标题_已加载_备用",
-            "启动_服务器选择",
-            "大厅_已进入"
+            "启动_守卫"
+        ]
+    },
+    "停滞计时_1": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 2000,
+        "max_hit": 30,
+        "next": [
+            "启动_守卫"
+        ]
+    },
+    "停滞重启_1": {
+        "recognition": "DirectHit",
+        "action": "StopApp",
+        "package": "com.yongshi.tenojo.bilibili",
+        "post_delay": 3000,
+        "max_hit": 1,
+        "next": [
+            "重启_拉起"
+        ]
+    },
+    "停滞计时_2": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 2000,
+        "max_hit": 30,
+        "next": [
+            "启动_守卫"
+        ]
+    },
+    "停滞重启_2": {
+        "recognition": "DirectHit",
+        "action": "StopApp",
+        "package": "com.yongshi.tenojo.bilibili",
+        "post_delay": 3000,
+        "max_hit": 1,
+        "next": [
+            "重启_拉起"
+        ]
+    },
+    "停滞计时_3": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 2000,
+        "max_hit": 30,
+        "next": [
+            "启动_守卫"
+        ]
+    },
+    "停滞重启_3": {
+        "recognition": "DirectHit",
+        "action": "StopApp",
+        "package": "com.yongshi.tenojo.bilibili",
+        "post_delay": 3000,
+        "max_hit": 1,
+        "next": [
+            "重启_拉起"
+        ]
+    },
+    "重启_拉起": {
+        "recognition": "DirectHit",
+        "action": "StartApp",
+        "package": "com.yongshi.tenojo.bilibili",
+        "post_delay": 3000,
+        "next": [
+            "启动_守卫"
         ]
     }
 }

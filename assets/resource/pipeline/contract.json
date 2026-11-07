@@ -21,7 +21,8 @@
             "屏保_待机_对策",
             "对策_任务",
             "对策_领等级"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "屏保_待机_对策": {
         "recognition": "OCR",
@@ -38,7 +39,7 @@
         "key": [
             4
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
@@ -68,7 +69,8 @@
         "next": [
             "对策_任务领取",
             "对策_返回主页面"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "对策_任务领取": {
         "recognition": "OCR",
@@ -91,7 +93,8 @@
         "next": [
             "对策_结算",
             "对策_返回主页面"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "对策_结算": {
         "recognition": "OCR",
@@ -109,7 +112,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 6000,
         "next": [
@@ -139,7 +142,8 @@
         "next": [
             "对策_领等级",
             "对策_返回大厅"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "对策_领等级": {
         "recognition": "OCR",
@@ -162,7 +166,8 @@
         "next": [
             "对策_结算2",
             "对策_返回大厅"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "对策_结算2": {
         "recognition": "OCR",
@@ -180,7 +185,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 6000,
         "next": [
@@ -209,7 +214,8 @@
         "timeout": 8000,
         "next": [
             "对策_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "对策_完成": {
         "recognition": "OCR",

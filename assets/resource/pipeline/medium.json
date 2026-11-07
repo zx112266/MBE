@@ -21,7 +21,8 @@
             "屏保_待机_介质",
             "介质_刻印页",
             "介质_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "屏保_待机_介质": {
         "recognition": "OCR",
@@ -38,7 +39,7 @@
         "key": [
             4
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
@@ -68,7 +69,8 @@
         "next": [
             "介质_入口",
             "介质_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_入口": {
         "recognition": "OCR",
@@ -91,7 +93,8 @@
         "next": [
             "介质_详情",
             "介质_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_详情": {
         "recognition": "OCR",
@@ -120,7 +123,7 @@
             95,
             659
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2500,
         "timeout": 5000,
         "next": [
@@ -149,7 +152,8 @@
         "next": [
             "介质_领取弹窗",
             "介质_关面板"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_领取弹窗": {
         "recognition": "OCR",
@@ -167,7 +171,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 6000,
         "next": [
@@ -196,7 +200,8 @@
         "next": [
             "介质_开始挑战",
             "介质_返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_开始挑战": {
         "recognition": "OCR",
@@ -219,7 +224,8 @@
         "next": [
             "介质_队伍页",
             "介质_返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_队伍页": {
         "recognition": "OCR",
@@ -242,7 +248,8 @@
         "next": [
             "介质_战斗等待",
             "介质_返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_等待结算": {
         "recognition": "OCR",
@@ -286,7 +293,8 @@
         "next": [
             "介质_详情3",
             "介质_确认"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_详情3": {
         "recognition": "OCR",
@@ -314,7 +322,7 @@
             95,
             659
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2500,
         "timeout": 5000,
         "next": [
@@ -343,7 +351,8 @@
         "next": [
             "介质_领取弹窗2",
             "介质_关面板2"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_领取弹窗2": {
         "recognition": "OCR",
@@ -361,7 +370,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 6000,
         "next": [
@@ -389,7 +398,8 @@
         "timeout": 6000,
         "next": [
             "介质_返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_返回": {
         "recognition": "OCR",
@@ -412,7 +422,8 @@
         "next": [
             "介质_返回刻印",
             "介质_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_返回刻印": {
         "recognition": "OCR",
@@ -437,7 +448,8 @@
         "next": [
             "介质_返回作战",
             "介质_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_返回作战": {
         "recognition": "OCR",
@@ -461,7 +473,8 @@
         "timeout": 8000,
         "next": [
             "介质_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "介质_完成": {
         "recognition": "OCR",

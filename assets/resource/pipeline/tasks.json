@@ -23,7 +23,8 @@
             "任务_周常入口",
             "任务_返回",
             "任务_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "屏保_待机_任务": {
         "recognition": "OCR",
@@ -40,7 +41,7 @@
         "key": [
             4
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
@@ -75,7 +76,7 @@
             1156,
             667
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2500,
         "timeout": 5000,
         "next": [
@@ -100,7 +101,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 5000,
         "next": [
@@ -133,7 +134,7 @@
             1156,
             667
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2500,
         "timeout": 3000,
         "next": [
@@ -157,7 +158,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 5000,
         "next": [
@@ -186,7 +187,8 @@
         "next": [
             "任务_周常检查",
             "任务_返回"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "任务_周常检查": {
         "recognition": "ColorMatch",
@@ -212,7 +214,7 @@
             1155,
             667
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2500,
         "timeout": 5000,
         "next": [
@@ -236,7 +238,7 @@
             640,
             676
         ],
-        "pre_delay": 800,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "timeout": 5000,
         "next": [
@@ -265,7 +267,8 @@
         "timeout": 6000,
         "next": [
             "任务_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "任务_完成": {
         "recognition": "OCR",

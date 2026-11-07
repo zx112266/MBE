@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PIPE_DIR = ROOT / "assets" / "resource" / "pipeline"
-SESSION = "main"
+SESSION = "work"
 
 # (脚本文件, 入口节点, 中文名, 该脚本最长允许耗时/秒)
 SCRIPTS = [
@@ -99,7 +99,7 @@ def wait_for_lobby(timeout: float = 150.0, allow_back: bool = True) -> bool:
 
 def run_pipeline(path: Path, entry: str, budget: float) -> dict:
     t0 = time.time()
-    override = json.dumps({entry: {"timeout": 30000, "pre_delay": 800}}, ensure_ascii=False)
+    override = json.dumps({entry: {"timeout": 60000}}, ensure_ascii=False)
     data = cli("pipeline", "run", str(path), entry, "--override", override, timeout=budget)
     elapsed = time.time() - t0
     nodes = [n.get("name", "") for n in (data.get("nodes") or [])]
@@ -124,6 +124,8 @@ def main() -> int:
             fh.write(line + "\n")
 
     log("=== 开始顺序执行日常脚本 ===")
+    cli("resource", "load-image", str(ROOT / "assets" / "resource" / "image"), timeout=60)
+    log("已加载模板图 assets/resource/image")
 
     if not wait_for_lobby(15, allow_back=False):
         log("当前不在大厅，先运行启动脚本把游戏拉起来…")

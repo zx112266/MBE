@@ -21,7 +21,8 @@
             "屏保_待机_物资",
             "物资_物资页",
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "屏保_待机_物资": {
         "recognition": "OCR",
@@ -38,7 +39,7 @@
         "key": [
             4
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 2000,
         "timeout": 3000,
         "next": [
@@ -68,7 +69,8 @@
         "next": [
             "物资_模拟作战",
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_模拟作战": {
         "recognition": "OCR",
@@ -90,7 +92,8 @@
         "timeout": 10000,
         "next": [
             "物资_选节点"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_选节点": {
         "recognition": "OCR",
@@ -112,7 +115,8 @@
         "timeout": 10000,
         "next": [
             "物资_倍数最大"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_倍数最大": {
         "recognition": "OCR",
@@ -134,7 +138,8 @@
         "timeout": 8000,
         "next": [
             "物资_倍数2"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_倍数2": {
         "recognition": "DirectHit",
@@ -146,7 +151,8 @@
         "post_delay": 900,
         "next": [
             "物资_倍数3"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_倍数3": {
         "recognition": "DirectHit",
@@ -158,7 +164,8 @@
         "post_delay": 900,
         "next": [
             "物资_倍数4"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_倍数4": {
         "recognition": "DirectHit",
@@ -170,7 +177,8 @@
         "post_delay": 900,
         "next": [
             "物资_倍数5"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_倍数5": {
         "recognition": "DirectHit",
@@ -182,7 +190,8 @@
         "post_delay": 900,
         "next": [
             "物资_倍数6"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_倍数6": {
         "recognition": "DirectHit",
@@ -194,7 +203,8 @@
         "post_delay": 900,
         "next": [
             "物资_扫荡"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_扫荡": {
         "recognition": "OCR",
@@ -218,7 +228,8 @@
             "物资_扫荡确定",
             "物资_体力弹窗",
             "物资_返回节点图"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_扫荡确定": {
         "recognition": "OCR",
@@ -242,7 +253,8 @@
         "next": [
             "物资_扫荡完成",
             "物资_返回节点图"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_扫荡完成": {
         "recognition": "OCR",
@@ -265,7 +277,8 @@
         "next": [
             "物资_返回节点图",
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_返回节点图": {
         "recognition": "OCR",
@@ -291,7 +304,8 @@
             "物资_返回物资页",
             "物资_返回主菜单",
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_返回物资页": {
         "recognition": "OCR",
@@ -316,7 +330,8 @@
         "next": [
             "物资_返回主菜单",
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_返回大厅": {
         "recognition": "OCR",
@@ -339,7 +354,8 @@
         "timeout": 8000,
         "next": [
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_完成": {
         "recognition": "OCR",
@@ -380,7 +396,8 @@
         "timeout": 8000,
         "next": [
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_体力弹窗": {
         "recognition": "OCR",
@@ -399,7 +416,7 @@
         "key": [
             4
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2000,
         "timeout": 4000,
         "next": [
@@ -413,7 +430,7 @@
             941,
             573
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 1200,
         "next": [
             "物资_次数最多"
@@ -426,7 +443,7 @@
             1234,
             573
         ],
-        "pre_delay": 300,
+        "pre_delay": 2000,
         "post_delay": 1500,
         "next": [
             "物资_扫荡2"
@@ -454,7 +471,8 @@
             "物资_扫荡确定",
             "物资_放弃扫荡",
             "物资_返回节点图"
-        ]
+        ],
+        "pre_delay": 2000
     },
     "物资_放弃扫荡": {
         "recognition": "OCR",
@@ -473,7 +491,7 @@
         "key": [
             4
         ],
-        "pre_delay": 500,
+        "pre_delay": 2000,
         "post_delay": 2500,
         "timeout": 4000,
         "next": [
@@ -503,6 +521,7 @@
             "物资_返回物资页",
             "物资_返回主菜单",
             "物资_完成"
-        ]
+        ],
+        "pre_delay": 2000
     }
 }
