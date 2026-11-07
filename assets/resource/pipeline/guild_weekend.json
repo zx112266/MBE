@@ -210,29 +210,6 @@
             "公会周末_返回BOSS"
         ]
     },
-    "公会周末_确认": {
-        "recognition": "OCR",
-        "expected": [
-            "确认",
-            "再次挑战"
-        ],
-        "roi": [
-            860,
-            640,
-            300,
-            60
-        ],
-        "action": "Click",
-        "target": [
-            1078,
-            668
-        ],
-        "post_delay": 3000,
-        "timeout": 3000,
-        "next": [
-            "公会周末_战斗等待"
-        ]
-    },
     "公会周末_领档1": {
         "recognition": "ColorMatch",
         "lower": [
