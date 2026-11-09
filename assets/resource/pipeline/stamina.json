@@ -1,28 +1,13 @@
 {
     "体力获取": {
-        "recognition": "OCR",
-        "expected": [
-            "前往作战"
-        ],
-        "roi": [
-            1060,
-            640,
-            220,
-            80
-        ],
-        "action": "Click",
-        "target": [
-            730,
-            32
-        ],
-        "post_delay": 1500,
-        "timeout": 60000,
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200,
+        "max_hit": 15,
         "next": [
-            "屏保_待机_体力",
-            "体力_点每日补给标签",
-            "体力_完成"
-        ],
-        "pre_delay": 2000
+            "体力获取_主体",
+            "体力获取_退一级"
+        ]
     },
     "屏保_待机_体力": {
         "recognition": "OCR",
@@ -246,5 +231,43 @@
             "体力_完成"
         ],
         "pre_delay": 2000
+    },
+    "体力获取_主体": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            730,
+            32
+        ],
+        "post_delay": 1500,
+        "timeout": 60000,
+        "next": [
+            "屏保_待机_体力",
+            "体力_点每日补给标签",
+            "体力_完成"
+        ],
+        "pre_delay": 2000
+    },
+    "体力获取_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 1200,
+        "max_hit": 10,
+        "next": [
+            "体力获取"
+        ]
     }
 }

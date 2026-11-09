@@ -1,27 +1,13 @@
 {
     "商店每日采购": {
-        "recognition": "OCR",
-        "expected": [
-            "前往作战"
-        ],
-        "roi": [
-            1060,
-            640,
-            220,
-            80
-        ],
-        "action": "Click",
-        "target": [
-            722,
-            674
-        ],
-        "post_delay": 2500,
-        "timeout": 30000,
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200,
+        "max_hit": 15,
         "next": [
-            "屏保_待机_商店",
-            "商店_进补给区"
-        ],
-        "pre_delay": 2000
+            "商店每日采购_主体",
+            "商店每日采购_退一级"
+        ]
     },
     "屏保_待机_商店": {
         "recognition": "OCR",
@@ -190,13 +176,16 @@
     "商店_返回补给区": {
         "recognition": "OCR",
         "expected": [
-            "日常补给"
+            "日常补给",
+            "组合补给",
+            "限时补给",
+            "凭证兑换"
         ],
         "roi": [
-            470,
-            85,
-            150,
-            50
+            430,
+            80,
+            400,
+            60
         ],
         "action": "Click",
         "target": [
@@ -626,13 +615,15 @@
     "商店_返回交易区": {
         "recognition": "OCR",
         "expected": [
-            "每日采购"
+            "每日采购",
+            "凭证置换",
+            "刻印研发"
         ],
         "roi": [
-            80,
-            95,
-            140,
-            50
+            60,
+            90,
+            170,
+            320
         ],
         "action": "Click",
         "target": [
@@ -818,6 +809,7 @@
         "max_hit": 8,
         "next": [
             "商店_完成",
+            "商店_百宝囊误入",
             "商店_退一级"
         ]
     },
@@ -832,6 +824,66 @@
         "post_delay": 1500,
         "next": [
             "商店_情报返回"
+        ]
+    },
+    "商店每日采购_主体": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            722,
+            674
+        ],
+        "post_delay": 2500,
+        "timeout": 30000,
+        "next": [
+            "屏保_待机_商店",
+            "商店_进补给区"
+        ],
+        "pre_delay": 2000
+    },
+    "商店每日采购_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 1200,
+        "max_hit": 10,
+        "next": [
+            "商店每日采购"
+        ]
+    },
+    "商店_百宝囊误入": {
+        "recognition": "OCR",
+        "expected": [
+            "百宝囊"
+        ],
+        "roi": [
+            60,
+            95,
+            130,
+            45
+        ],
+        "action": "Click",
+        "target": [
+            51,
+            40
+        ],
+        "post_delay": 2000,
+        "timeout": 4000,
+        "max_hit": 3,
+        "next": [
+            "商店每日采购_主体"
         ]
     }
 }

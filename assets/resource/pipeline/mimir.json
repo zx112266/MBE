@@ -1,28 +1,13 @@
 {
     "弥弥观测站": {
-        "recognition": "OCR",
-        "expected": [
-            "前往作战"
-        ],
-        "roi": [
-            1060,
-            640,
-            220,
-            80
-        ],
-        "action": "Click",
-        "target": [
-            1198,
-            78
-        ],
-        "post_delay": 2500,
-        "timeout": 30000,
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200,
+        "max_hit": 15,
         "next": [
-            "屏保_待机_弥弥",
-            "弥弥_点观测站",
-            "弥弥_完成"
-        ],
-        "pre_delay": 2000
+            "弥弥观测站_主体",
+            "弥弥观测站_退一级"
+        ]
     },
     "屏保_待机_弥弥": {
         "recognition": "OCR",
@@ -68,6 +53,7 @@
         "post_delay": 3000,
         "timeout": 10000,
         "next": [
+            "弥弥_说明弹窗",
             "弥弥_全部探索中",
             "弥弥_领取",
             "弥弥_派遣",
@@ -228,6 +214,68 @@
         "timeout": 4000,
         "next": [
             "弥弥_返回"
+        ]
+    },
+    "弥弥观测站_主体": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            1198,
+            78
+        ],
+        "post_delay": 2500,
+        "timeout": 30000,
+        "next": [
+            "屏保_待机_弥弥",
+            "弥弥_点观测站",
+            "弥弥_完成"
+        ],
+        "pre_delay": 2000
+    },
+    "弥弥观测站_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 1200,
+        "max_hit": 10,
+        "next": [
+            "弥弥观测站"
+        ]
+    },
+    "弥弥_说明弹窗": {
+        "recognition": "OCR",
+        "expected": [
+            "本周探索已开启",
+            "已开启"
+        ],
+        "roi": [
+            250,
+            150,
+            780,
+            300
+        ],
+        "action": "Click",
+        "target": [
+            640,
+            620
+        ],
+        "post_delay": 800,
+        "timeout": 3000,
+        "max_hit": 3,
+        "next": [
+            "弥弥_点观测站"
         ]
     }
 }

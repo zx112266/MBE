@@ -1,28 +1,13 @@
 {
     "游园街日常": {
-        "recognition": "OCR",
-        "expected": [
-            "前往作战"
-        ],
-        "roi": [
-            1060,
-            640,
-            220,
-            80
-        ],
-        "action": "Click",
-        "target": [
-            1005,
-            682
-        ],
-        "post_delay": 3000,
-        "timeout": 30000,
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200,
+        "max_hit": 15,
         "next": [
-            "屏保_待机_游园",
-            "游园_开面板",
-            "游园_完成"
-        ],
-        "pre_delay": 2000
+            "游园街日常_主体",
+            "游园街日常_退一级"
+        ]
     },
     "屏保_待机_游园": {
         "recognition": "OCR",
@@ -556,5 +541,43 @@
         ],
         "pre_delay": 2000,
         "max_hit": 6
+    },
+    "游园街日常_主体": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            1005,
+            682
+        ],
+        "post_delay": 3000,
+        "timeout": 30000,
+        "next": [
+            "屏保_待机_游园",
+            "游园_开面板",
+            "游园_完成"
+        ],
+        "pre_delay": 2000
+    },
+    "游园街日常_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 1200,
+        "max_hit": 10,
+        "next": [
+            "游园街日常"
+        ]
     }
 }

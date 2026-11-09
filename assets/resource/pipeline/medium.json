@@ -1,28 +1,13 @@
 {
     "介质攫取": {
-        "recognition": "OCR",
-        "expected": [
-            "前往作战"
-        ],
-        "roi": [
-            1060,
-            640,
-            220,
-            80
-        ],
-        "action": "Click",
-        "target": [
-            1167,
-            675
-        ],
-        "post_delay": 2500,
-        "timeout": 20000,
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 200,
+        "max_hit": 15,
         "next": [
-            "屏保_待机_介质",
-            "介质_刻印页",
-            "介质_完成"
-        ],
-        "pre_delay": 2000
+            "介质攫取_主体",
+            "介质攫取_退一级"
+        ]
     },
     "屏保_待机_介质": {
         "recognition": "OCR",
@@ -571,6 +556,44 @@
         "next": [
             "介质_开始挑战",
             "介质_返回"
+        ]
+    },
+    "介质攫取_主体": {
+        "recognition": "OCR",
+        "expected": [
+            "前往作战"
+        ],
+        "roi": [
+            1060,
+            640,
+            220,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            1167,
+            675
+        ],
+        "post_delay": 2500,
+        "timeout": 20000,
+        "next": [
+            "屏保_待机_介质",
+            "介质_刻印页",
+            "介质_完成"
+        ],
+        "pre_delay": 2000
+    },
+    "介质攫取_退一级": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            48,
+            38
+        ],
+        "post_delay": 1200,
+        "max_hit": 10,
+        "next": [
+            "介质攫取"
         ]
     }
 }
